@@ -1,7 +1,5 @@
 import {
     Box,
-    Slider,
-    Button,
     Toolbar,
     Typography,
     InputLabel, AppBar,
@@ -14,7 +12,7 @@ import states from "../../const/states";
 export default function DropDownState(props) {
     return (
         <Box>
-            <AppBar position="fixed" style={{ height: 90, justifyContent: "center" }}>
+            <AppBar position="sticky" style={{ height: 90, justifyContent: "center" }}>
                 <Toolbar>
                     <Typography aligh='left' variant='h4' sx={{ fontWeight: 'bold' }}>
                         Yelp restuarant analysis

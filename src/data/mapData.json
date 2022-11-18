@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:66d9ffe93446b9a3d03edae77f74b9349ec57fb7e1f562e7dea9f3eed0a7dcf9
-size 445
+[
+    {
+        "key": "0",
+        "mean_rating": "4.4",
+        "coordinates": [
+            36.181271,
+            -115.134132
+        ],
+        "name": "KFC",
+        "count": "666",
+        "state": "Colorado"
+    },
+    {
+        "key": "1",
+        "mean_rating": "4.3",
+        "coordinates": [
+            38.744217,
+            -90.305391
+        ],
+        "name": "KFCFF",
+        "count": "666",
+        "state": "Colorado"
+    }
+]

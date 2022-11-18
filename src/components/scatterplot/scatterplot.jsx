@@ -97,11 +97,13 @@ export default function ScatterPlot() {
         <Card variant="outlined">
             <CardContent >
                 <Grid container spacing={1} direction="column" width={width}>
+                    <Grid item align={"left"} >
+                        <h2>{attrToText(attr)} vs BMI</h2>
+                    </ Grid>
                     <Grid item align={"right"} marginRight={0.5}>
                         <AttrDropdown attr={attr} setAttrState={setAttrState} />
                     </Grid>
                     <Grid item marginLeft={margin.left / 7}>
-                        <h2>{attrToText(attr)} vs BMI</h2>
                         <div>
                             <svg width={w} height={h}>
                                 <g transform={`translate(${margin.left},${margin.top})`}>

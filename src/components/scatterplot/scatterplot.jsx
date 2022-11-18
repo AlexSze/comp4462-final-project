@@ -6,6 +6,7 @@ import { loadScatterPlotData } from "../../utils/loadData";
 import { scaleLinear } from "d3-scale";
 import { max } from "d3-array"
 import AttrDropdown, { attrToText } from "./attrDropdown";
+import UseWindowDimensions from "../../utils/dimension";
 
 const data = loadScatterPlotData();
 
@@ -62,8 +63,9 @@ function AxisLeft({ yScale, width }) {
 
 export default function ScatterPlot() {
     const [attr, setAttrState] = useState("resFoodCount");
+    const { height, width } = UseWindowDimensions();
 
-    const w = 600;
+    const w = width * 0.4;
     const h = 600;
     const margin = {
         top: 40,
@@ -72,16 +74,16 @@ export default function ScatterPlot() {
         right: 40
     };
 
-    const width = w - margin.right - margin.left,
-        height = h - margin.top - margin.bottom;
+    const theWidth = w - margin.right - margin.left,
+        theHeight = h - margin.top - margin.bottom;
 
     const xScale = scaleLinear()
         .domain([0, max(data, d => d["BMI"]) + 3]) // input range [min, max]
-        .range([0, width]); //output range
+        .range([0, theWidth]); //output range
 
     const yScale = scaleLinear()
         .domain([0, max(data, d => d[attr]) + 3])
-        .range([height, 0]);
+        .range([theHeight, 0]);
 
     const circles = data.map((d, i) => (
         <circle
@@ -96,7 +98,7 @@ export default function ScatterPlot() {
     return (
         <Card variant="outlined">
             <CardContent >
-                <Grid container spacing={1} direction="column" width={width}>
+                <Grid container spacing={1} direction="column" width={theWidth}>
                     <Grid item align={"left"} >
                         <h2>{attrToText(attr)} vs BMI</h2>
                     </ Grid>
@@ -107,18 +109,18 @@ export default function ScatterPlot() {
                         <div>
                             <svg width={w} height={h}>
                                 <g transform={`translate(${margin.left},${margin.top})`}>
-                                    <AxisLeft yScale={yScale} width={width} />
-                                    <AxisBottom xScale={xScale} height={height} />
+                                    <AxisLeft yScale={yScale} width={theWidth} />
+                                    <AxisBottom xScale={xScale} height={theHeight} />
                                     {circles}
                                 </g>
-                                <g transform={`translate(${13}, ${width / 2 + 2 * margin.left})`}>
+                                <g transform={`translate(${13}, ${theWidth / 2 + 2 * margin.left})`}>
                                     <g transform={`rotate(270)`}>
                                         <text>
                                             {attrToText(attr)}
                                         </text>
                                     </g>
                                 </g>
-                                <g transform={`translate(${width / 2 + margin.left},${height + 2 * margin.bottom})`}>
+                                <g transform={`translate(${theWidth / 2 + margin.left},${theHeight + 2 * margin.bottom})`}>
                                     <text>
                                         BMI
                                     </text>

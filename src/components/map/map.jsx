@@ -5,8 +5,6 @@ import {
 import { loadMapData } from "../../utils/loadData";
 import "leaflet/dist/leaflet.css";
 
-
-
 export default function Map({ usState }) {
     const data = loadMapData(usState);
 

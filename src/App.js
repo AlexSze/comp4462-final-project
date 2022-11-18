@@ -4,6 +4,7 @@ import Example from './components/example';
 import {
   Grid
 } from "@mui/material";
+import Ranking from './components/ranking/ranking';
 
 function App() {
   const [usState, setUsState] = useState("");
@@ -34,7 +35,7 @@ function App() {
             <Example />
           </Grid>
           <Grid item>
-            <Example />
+            <Ranking />
           </Grid>
         </Grid>
       </Grid>

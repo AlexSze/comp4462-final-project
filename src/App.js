@@ -4,6 +4,7 @@ import Example from './components/example';
 import {
   Grid
 } from "@mui/material";
+import Map from './components/map/map';
 
 function App() {
   const [usState, setUsState] = useState("");
@@ -17,7 +18,7 @@ function App() {
       <Grid container spacing={1.5} style={{ padding: 10 }}>
         <Grid item xs={5} container direction="column" spacing={2}>
           <Grid item>
-            <Example />
+            <Map usState={usState} />
           </Grid>
           <Grid item>
             <Example />

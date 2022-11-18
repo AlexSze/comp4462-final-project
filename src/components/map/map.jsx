@@ -8,8 +8,7 @@ import "leaflet/dist/leaflet.css";
 
 
 export default function Map({ usState }) {
-    const fullData = loadMapData(usState);
-    const data = fullData
+    const data = loadMapData(usState);
 
     function stateCenter() {
         if (usState === "") return [38, -98];

@@ -1,0 +1,23 @@
+[
+    {
+        "key": "0",
+        "state": "Colorado",
+        "fastFoodCount": 6,
+        "resFoodCount": 3,
+        "BMI": 5
+    },
+    {
+        "key": "1",
+        "state": "Colorado",
+        "fastFoodCount": 9,
+        "resFoodCount": 5,
+        "BMI": 2
+    },
+    {
+        "key": "2",
+        "state": "Colorado",
+        "fastFoodCount": 7,
+        "resFoodCount": 5,
+        "BMI": 8
+    }
+]

@@ -5,6 +5,7 @@ import {
   Grid
 } from "@mui/material";
 import Map from './components/map/map';
+import ScatterPlot from './components/scatterplot/scatterplot';
 
 function App() {
   const [usState, setUsState] = useState("");
@@ -35,7 +36,7 @@ function App() {
             <Example />
           </Grid>
           <Grid item>
-            <Example />
+            <ScatterPlot />
           </Grid>
         </Grid>
       </Grid>

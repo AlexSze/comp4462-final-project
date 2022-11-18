@@ -12,7 +12,7 @@ import states from "../../const/states";
 export default function DropDownState(props) {
     return (
         <Box>
-            <AppBar position="sticky" style={{ height: 90, justifyContent: "center" }}>
+            <AppBar position="sticky" style={{ height: 90, justifyContent: "center", backgroundColor: "#738cd6" }}>
                 <Toolbar>
                     <Typography aligh='left' variant='h4' sx={{ fontWeight: 'bold' }}>
                         Yelp restuarant analysis
@@ -34,7 +34,7 @@ export default function DropDownState(props) {
                                     width: 230,
                                     color: "#ffffff",
                                     border: "3px solid #ffffff",
-                                    textAlign: "right",
+                                    textAlign: "left",
                                 }}
                                 value={props.usState}
                                 onChange={(e) => {

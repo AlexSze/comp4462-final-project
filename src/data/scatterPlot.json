@@ -1,0 +1,93 @@
+[
+    {
+        "state": "Arizona",
+        "prevalence": "31.3",
+        "resFoodCount": "1609",
+        "fastFoodCount": "440",
+        "key": "0"
+    },
+    {
+        "state": "California",
+        "prevalence": "27.6",
+        "resFoodCount": "630",
+        "fastFoodCount": "57",
+        "key": "1"
+    },
+    {
+        "state": "Delaware",
+        "prevalence": "33.9",
+        "resFoodCount": "601",
+        "fastFoodCount": "71",
+        "key": "2"
+    },
+    {
+        "state": "Florida",
+        "prevalence": "No data",
+        "resFoodCount": "5440",
+        "fastFoodCount": "889",
+        "key": "3"
+    },
+    {
+        "state": "Idaho",
+        "prevalence": "31.6",
+        "resFoodCount": "864",
+        "fastFoodCount": "185",
+        "key": "4"
+    },
+    {
+        "state": "Illinois",
+        "prevalence": "34.2",
+        "resFoodCount": "632",
+        "fastFoodCount": "198",
+        "key": "5"
+    },
+    {
+        "state": "Indiana",
+        "prevalence": "36.3",
+        "resFoodCount": "2545",
+        "fastFoodCount": "656",
+        "key": "6"
+    },
+    {
+        "state": "Louisiana",
+        "prevalence": "38.6",
+        "resFoodCount": "2116",
+        "fastFoodCount": "294",
+        "key": "7"
+    },
+    {
+        "state": "Missouri",
+        "prevalence": "37.3",
+        "resFoodCount": "2508",
+        "fastFoodCount": "565",
+        "key": "8"
+    },
+    {
+        "state": "Nevada",
+        "prevalence": "31.3",
+        "resFoodCount": "972",
+        "fastFoodCount": "187",
+        "key": "9"
+    },
+    {
+        "state": "New Jersey",
+        "prevalence": "28.2",
+        "resFoodCount": "2105",
+        "fastFoodCount": "251",
+        "key": "10"
+    },
+    {
+        "state": "Pennsylvania",
+        "prevalence": "33.3",
+        "resFoodCount": "7163",
+        "fastFoodCount": "655",
+        "key": "11"
+    },
+    {
+        "state": "Tennessee",
+        "prevalence": "35.0",
+        "resFoodCount": "2715",
+        "fastFoodCount": "555",
+        "key": "12"
+    }
+]

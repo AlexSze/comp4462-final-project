@@ -1,0 +1,35 @@
+[
+    {
+        "key": "0",
+        "state": "Colorado",
+        "name": "KFC",
+        "categories": [
+            "fastfood",
+            "highend"
+        ]
+    },
+    {
+        "key": "1",
+        "state": "Colorado",
+        "name": "KFCFF",
+        "categories": [
+            "fastfood",
+            "b",
+            "c",
+            "g",
+            "h",
+            "j",
+            "k",
+            "p"
+        ]
+    },
+    {
+        "key": "2",
+        "state": "Colorado",
+        "name": "KFCCC",
+        "categories": [
+            "fastfood",
+            "dimsum"
+        ]
+    }
+]

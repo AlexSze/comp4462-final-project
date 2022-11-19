@@ -5,9 +5,14 @@ import {
   Grid
 } from "@mui/material";
 import Ranking from './components/ranking/ranking';
+import Map from './components/map/map';
+import ScatterPlot from './components/scatterplot/scatterplot';
+import OurWordCloud from './components/wordCloud/wordcloud';
+import UseWindowDimensions from './utils/dimension';
 
 function App() {
   const [usState, setUsState] = useState("");
+  const { height, width } = UseWindowDimensions();
 
   return (
     <div className="App">
@@ -17,8 +22,8 @@ function App() {
       />
       <Grid container spacing={1.5} style={{ padding: 10 }}>
         <Grid item xs={5} container direction="column" spacing={2}>
-          <Grid item>
-            <Example />
+          <Grid item >
+            <Map usState={usState} />
           </Grid>
           <Grid item>
             <Example />
@@ -27,15 +32,15 @@ function App() {
             <Example />
           </Grid>
         </Grid>
-        <Grid item xs={5} container direction="column" spacing={2}>
-          <Grid item>
-            <Example />
+        <Grid item xs={'auto'} container direction="column" spacing={2}>
+          <Grid item width={width / 2.2} >
+            <OurWordCloud usState={usState} />
           </Grid>
           <Grid item>
             <Ranking />
           </Grid>
           <Grid item>
-            <Example />
+            <ScatterPlot />
           </Grid>
         </Grid>
       </Grid>

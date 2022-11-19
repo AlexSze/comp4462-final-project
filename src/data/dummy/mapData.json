@@ -1,0 +1,24 @@
+[
+    {
+        "key": "0",
+        "mean_rating": "4.4",
+        "coordinates": [
+            36.181271,
+            -115.134132
+        ],
+        "name": "KFC",
+        "count": "666",
+        "state": "Colorado"
+    },
+    {
+        "key": "1",
+        "mean_rating": "4.3",
+        "coordinates": [
+            38.744217,
+            -90.305391
+        ],
+        "name": "KFCFF",
+        "count": "666",
+        "state": "Colorado"
+    }
+]

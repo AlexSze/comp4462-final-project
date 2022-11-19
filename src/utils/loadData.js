@@ -35,53 +35,54 @@ export function loadWordCloudData(usState) {
 }
 
 export function loadHeatMapData(usState) {
-    return heatMapData;
+    return heatMapData
 }
-export function loadParallelCoordinateData(include=true, usState, ...attributes){
+
+export function loadParallelCoordinateData(include = true, usState, ...attributes) {
     var result = parallelCoordinateData.filter(res => res["state_Full"] === usState || usState === "")
 
     for (let i = 0; i < attributes.length; ++i) {
         if (!attributes.includes(attributes[i])) {
-          attributes.splice(i, 1);
-          --i;
+            attributes.splice(i, 1);
+            --i;
         }
     }
-    
+
     if (attributes.length === 0) return result;
     result = result.map((restaurant) =>
-    Object.fromEntries(
-        Object.entries(restaurant).filter(([key, value]) =>
-        include ? attributes.includes(key) : !attributes.includes(key)
+        Object.fromEntries(
+            Object.entries(restaurant).filter(([key, value]) =>
+                include ? attributes.includes(key) : !attributes.includes(key)
+            )
         )
-    )
     );
     // console.log(result);
     // return result;
-    
+
     let new_json = [];
-    for(let i = 0; i < result.length; i++){
+    for (let i = 0; i < result.length; i++) {
         const dummy_Ambience = result[i]["Ambience"].split(", ");
         var ambience;
         // console.log(dummy_Ambience);
-        for(let a = 0; a < dummy_Ambience.length; a++){
-            if(dummy_Ambience[a].includes("True")){
-                if(dummy_Ambience[a].includes("divey"))
+        for (let a = 0; a < dummy_Ambience.length; a++) {
+            if (dummy_Ambience[a].includes("True")) {
+                if (dummy_Ambience[a].includes("divey"))
                     ambience = "divey";
-                else if(dummy_Ambience[a].includes("hipster"))
+                else if (dummy_Ambience[a].includes("hipster"))
                     ambience = "hipster";
-                else if(dummy_Ambience[a].includes("casual"))
+                else if (dummy_Ambience[a].includes("casual"))
                     ambience = "casual";
-                else if(dummy_Ambience[a].includes("touristy"))
+                else if (dummy_Ambience[a].includes("touristy"))
                     ambience = "touristy";
-                else if(dummy_Ambience[a].includes("trendy"))
+                else if (dummy_Ambience[a].includes("trendy"))
                     ambience = "trendy";
-                else if(dummy_Ambience[a].includes("intimate"))
+                else if (dummy_Ambience[a].includes("intimate"))
                     ambience = "intimate";
-                else if(dummy_Ambience[a].includes("romantic"))
+                else if (dummy_Ambience[a].includes("romantic"))
                     ambience = "romantic";
-                else if(dummy_Ambience[a].includes("classy"))
+                else if (dummy_Ambience[a].includes("classy"))
                     ambience = "classy";
-                else if(dummy_Ambience[a].includes("upscale"))
+                else if (dummy_Ambience[a].includes("upscale"))
                     ambience = "upscale";
             }
         }
@@ -90,12 +91,12 @@ export function loadParallelCoordinateData(include=true, usState, ...attributes)
         const opening_hours = result[i]["opening_hours"];
         const stars = result[i]["stars"];
 
-        for(let j = 0; j < dummy_categories.length; j++){
+        for (let j = 0; j < dummy_categories.length; j++) {
             const categories = dummy_categories[j];
-            new_json.push({ambience, categories,  opening_hours, stars});
+            new_json.push({ ambience, categories, opening_hours, stars });
         }
     }
     console.log(new_json);
-      return new_json;
-      
+    return new_json;
+
 }

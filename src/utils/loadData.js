@@ -4,6 +4,7 @@ import wordCloudData from "../data/wordCloudData.json";
 import heatMapData from "../data/heatMapData.json";
 
 import parallelCoordinateData from "../data/parallelCoordinate.json"
+import rankingData from "../data/ranking.json"
 export function loadMapData(usState) {
     var result = mapData.filter(res => res["state"] == usState || usState == "")
     return result
@@ -83,7 +84,7 @@ export function loadParallelCoordinateData(include = true, usState, ...attribute
                     ambience = "upscale";
             }
         }
-        const dummy_categories = result[i]["categories"].split(", ");
+        const dummy_categories = result[i]["categories"];
         const opening_hours = result[i]["opening_hours"];
         const stars = result[i]["stars"];
 
@@ -92,6 +93,19 @@ export function loadParallelCoordinateData(include = true, usState, ...attribute
             new_json.push({ ambience, categories, opening_hours, stars });
         }
     }
-    console.log(new_json);
+    // console.log(new_json);
     return new_json;
+}
+
+export function loadRankingData(usState){
+    // var result = rankingData.filter(res => res["state_Full"] === usState || usState === "")
+    // console.log(result);
+    // console.log(rankingData);
+    rankingData = rankingData.sort((a, b) => {
+        if(a.value > b.value){
+            return -1;
+        }   
+    });
+    console.log(rankingData);
+    return rankingData;
 }

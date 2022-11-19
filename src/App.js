@@ -31,7 +31,7 @@ function App() {
             <ParallelCoordinate usState={usState} />
           </Grid>
           <Grid item>
-            <Ranking />
+            <Ranking usState={usState}/>
           </Grid>
         </Grid>
         <Grid item xs={'auto'} container direction="column" spacing={2}>

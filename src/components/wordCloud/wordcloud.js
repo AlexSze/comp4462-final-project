@@ -14,8 +14,6 @@ export default function OurWordCloud({ usState }) {
         var value = data[key];
         words.push({ text: key, value: value })
     }
-    console.log(words)
-
 
     // processing size
     const totalCount = words.reduce((acc, word) => (acc += word.value), 0);

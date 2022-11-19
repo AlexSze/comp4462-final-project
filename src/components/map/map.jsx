@@ -52,7 +52,7 @@ export default function Map({ usState }) {
                         {data.map((restuarant) => {
                             const r_key = restuarant["key"];
                             const mean_rating = restuarant["mean_rating"];
-                            const coor = restuarant["coordinates"];
+                            const coor = JSON.parse(restuarant["coordinates"]);
                             const r_name = restuarant["name"];
                             const r_vote_count = restuarant["count"];
                             return (

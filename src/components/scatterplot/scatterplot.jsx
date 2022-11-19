@@ -78,18 +78,18 @@ export default function ScatterPlot() {
         theHeight = h - margin.top - margin.bottom;
 
     const xScale = scaleLinear()
-        .domain([0, max(data, d => d["BMI"]) + 3]) // input range [min, max]
+        .domain([0, 50]) // input range [min, max]
         .range([0, theWidth]); //output range
 
     const yScale = scaleLinear()
-        .domain([0, max(data, d => d[attr]) + 3])
+        .domain([0, attr == "resFoodCount" ? 8100 : 850])
         .range([theHeight, 0]);
 
     const circles = data.map((d, i) => (
         <circle
             key={i}
             r={5}
-            cx={xScale(d["BMI"])}
+            cx={xScale(d["prevalence"])}
             cy={yScale(d[attr])}
             style={{ fill: "lightblue" }}
         />
@@ -104,7 +104,7 @@ export default function ScatterPlot() {
                     </ Grid>
                     <Grid item align={"right"} marginRight={0.5}>
                         <AttrDropdown attr={attr} setAttrState={setAttrState} />
-                    </Grid>
+                    </ Grid>
                     <Grid item marginLeft={margin.left / 7}>
                         <div>
                             <svg width={w} height={h}>

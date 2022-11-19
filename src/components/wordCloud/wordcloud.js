@@ -1,42 +1,68 @@
 import {
     Card, CardContent, Grid
 } from "@mui/material";
-import { loadWordCloudData } from "../../utils/loadData";
-import WordCloud from "react-d3-cloud";
+// Section 1
+// import { loadWordCloudData } from "../../utils/loadData";
+// import WordCloud from "react-d3-cloud";
 import { useEffect, useState } from 'react';
 import UseWindowDimensions from '../../utils/dimension';
 import { ReactSpinner } from 'react-spinning-wheel';
 import 'react-spinning-wheel/dist/style.css';
 
 export default function OurWordCloud({ usState }) {
-    const [data, setData] = useState(null);
     const { height, width } = UseWindowDimensions();
     const [loading, setLoading] = useState(true);
 
-    const words = []
+    // Remark:
+    // Due to the overwhelming size, the following section can peralize computer with smaller than 32gb ram/
+    // To fix this problem, we use our computer to take screenshot of the wordcloud and display wordcloud as images instead/
+    // If you want to verify the function of our program and have a powerful computer please uncomment all Section 1s and comment all Section 2s
 
-    for (var key in data) {
-        var value = data[key];
-        words.push({ text: key, value: value })
-    }
+    // Section 1
+    // const [data, setData] = useState(null);
 
-    // processing size
-    const totalCount = words.reduce((acc, word) => (acc += word.value), 0);
-    words.forEach((word) => {
-        // Add new property called `proportion`
-        word.proportion = word.value / totalCount;
-    });
+    // const words = []
 
+    // for (var key in data) {
+    //     // filtering 
+    //     if (!key.includes("Food") && !key.includes("Golf") && !key.includes("(New)")) {
+    //         var value = data[key];
+    //         words.push({ text: key, value: value })
+    //     }
+    // }
+
+    // // processing size
+    // const totalCount = words.reduce((acc, word) => (acc += word.value), 0);
+    // words.forEach((word) => {
+    //     // Add new property called `proportion`
+    //     word.proportion = word.value / totalCount;
+    // });
+
+    // useEffect(() => {
+    //     setLoading(true);
+    //     const fetchData = async () => {
+    //         const temp = await loadWordCloudData(usState)
+    //         setData(temp);
+    //         setLoading(false);
+    //     }
+    //     fetchData()
+    //         .catch(console.error);
+    // }, [usState])
+
+    // Section 2
+    const listOfAvailableState = ["Arizona", "California", "Delaware", "Florida", "Idaho", "Illinois", "Indiana", "Louisiana", "Missouri", "Nevada", "New Jersey", "Pennsylvania", "Tennessee"];
+    const [path, setPath] = useState("allStates.jpg");
     useEffect(() => {
-        setLoading(true);
-        const fetchData = async () => {
-            const temp = await loadWordCloudData(usState)
-            setData(temp);
-            setLoading(false);
+        setLoading(false)
+        if (usState === "") {
+            setPath("allStates.jpg");
+        } else {
+            setPath(usState.trim().toLowerCase() + ".jpg");
         }
-        fetchData()
-            .catch(console.error);
     }, [usState])
+
+    console.log(usState)
+    console.log(path)
 
     return (
         <Card variant="outlined">
@@ -49,7 +75,8 @@ export default function OurWordCloud({ usState }) {
                             <h2>Food Categories</h2>
                         </ Grid>
                         <Grid item height={height * 0.3} marginRight={height * 0.009} marginBottom={height * 0.005} >
-                            {words.length === 0 ? <div> No Data </div> : <WordCloud
+                            {/* Section 1 */}
+                            {/* {words.length === 0 ? <div> No Data </div> : <WordCloud
                                 data={words}
                                 width={210}
                                 height={100}
@@ -58,7 +85,12 @@ export default function OurWordCloud({ usState }) {
                                 fill="Black"
                                 rotate={0}
                                 random={() => 1}
-                            />}
+                            />} */}
+
+                            {/* Section 2 */}
+                            {
+                                listOfAvailableState.includes(usState) || usState == "" ? <img src={path} ></img> : <div> No Data </div>
+                            }
                         </ Grid>
                     </ Grid>}
             </ CardContent>

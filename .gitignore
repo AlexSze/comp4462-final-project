@@ -24,3 +24,4 @@ yarn-debug.log*
 yarn-error.log*
 
 src/data/yelp_restaurants_review_Obesity.json
+src/data/heatMapData.json

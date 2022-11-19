@@ -26,7 +26,7 @@ Job division
   > # 3. start the local server
   > npm start
 
-### Deployment
+### Deploying to GitHub Pages
 To deploy our dashboard website to GitHub Pages, run the following command
   > ```
   >npm run deploy

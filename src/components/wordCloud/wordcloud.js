@@ -57,7 +57,7 @@ export default function OurWordCloud({ usState }) {
         if (usState === "") {
             setPath("allStates.jpg");
         } else {
-            setPath(usState.trim().toLowerCase() + ".jpg");
+            setPath(usState.replace(/ /g, '').toLowerCase() + ".jpg");
         }
     }, [usState])
 

@@ -1,7 +1,7 @@
-# Restaurant Analysis
+# Restaurant Analysis :plate_with_cutlery:
 
-### About
-This is the group project of Group 6 in Fall 2022 COMP4462 Data Visualization. 
+### About :clipboard:
+This is the group project of Group 6 in Fall 2022 - COMP4462 Data Visualization. 
 
 The dashboard below shows data of restaurants' reviews in the US. Yelp dataset and obesity dataset were used from Kaggle.
 ![apple](https://user-images.githubusercontent.com/118462821/202849477-04e56227-fa11-42d0-a7a4-8100ea9fa632.jpeg)

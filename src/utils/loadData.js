@@ -35,7 +35,8 @@ export function loadWordCloudData(usState) {
 }
 
 export function loadHeatMapData(usState) {
-    return heatMapData
+    return heatMapData;
+}
 export function loadParallelCoordinateData(include=true, usState, ...attributes){
     var result = parallelCoordinateData.filter(res => res["state_Full"] === usState || usState === "")
 

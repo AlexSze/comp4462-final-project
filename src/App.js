@@ -10,6 +10,7 @@ import ScatterPlot from './components/scatterplot/scatterplot';
 import OurWordCloud from './components/wordCloud/wordcloud';
 import UseWindowDimensions from './utils/dimension';
 import OurHeatMap from './components/heatmap/heatmap';
+import ParallelCoordinate from './components/parallelCoordinate/parallelCoordinate';
 
 function App() {
   const [usState, setUsState] = useState("");
@@ -27,7 +28,7 @@ function App() {
             <Map usState={usState} />
           </Grid>
           <Grid item>
-            <Example />
+            <ParallelCoordinate usState={usState} />
           </Grid>
           <Grid item>
             <Ranking />

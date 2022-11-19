@@ -1,89 +1,22 @@
 import { Card, CardContent, Grid } from "@mui/material";
 import { ResponsiveParallelCoordinates } from "@nivo/parallel-coordinates";
-import { filterYearsState, loadData, getShootingByID } from "../../utils";
-import { getPoliticalStance, getStanceColor } from "../../utils/usMap";
+import { loadParallelCoordinateData } from "../../utils/loadData";
 
-const rawData = loadData(
-  true,
-  "S#",
-  "Date",
-  "State",
-  "Gender",
-  "Race_encoded",
-  "Age",
-  "Fatalities",
-  "Injured",
-  "Total victims",
-  "Mental Health Issues"
-);
-const weekdays = [
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-  "Sunday",
-];
-const synonyms = {
-  Church: ["church", "temple", "mosque"],
-  Party: ["party"],
-  // Restaurant: ["restaurant", "cafeteria", "cafe", "coffee shop"],
-  Home: [
-    "home",
-    "house",
-    "family",
-    "mother",
-    "father",
-    "child",
-    "son",
-    "daughter",
-    "apartment",
-  ],
-  // "Drive-by": ["drive-by", "drive by"],
-  Club: ["club", "bar", "pub"],
-  School: ["school", "teacher", "student", "university", "college"],
-  // Street: ["street", "sidewalk", "roadside"],
-  // "Gas station": ["gas station"],
-  // "Post office": ["post office"],
-  // Mall: ["mall", "shopping", "macy's", "plaza"],
-  "Public facilities": [
-    "public facilities",
-    "city hall",
-    "army",
-    "government",
-    "township",
-    "navy",
-    "train",
-    "airport",
-  ],
-};
-
-export default function ParallelCoordinate({ yearRange, usState, venues }) {
-  const data = filterYearsState(rawData, yearRange, usState, venues);
-  data.forEach((shooting) => {
-    const d = new Date(shooting["Date"]);
-    shooting["Weekday"] = weekdays[(d.getDay() + 6) % 7];
-  });
-
-  data.forEach((item) => {
-    const shooting = getShootingByID(item["S#"]);
-    const locs = Object.keys(synonyms);
-    const str = (
-      shooting["Title"] +
-      shooting["Summary"] +
-      shooting["Incident Area"] +
-      JSON.stringify(shooting["NER"])
-    ).toLowerCase();
-    locs.forEach((element) => {
-      for (let i in synonyms[element]) {
-        if (!Object.keys(item).includes("Venue") && str.includes(synonyms[element][i])) {
-          item["Venue"] = element;
-          break;
-        }
-      }
-    });
-  });
+export default function ParallelCoordinate({usState}) {
+  const rawData = loadParallelCoordinateData(
+    true,
+    usState,
+    "categories",
+    "opening_hours", // "Bars, Restaurants, Sports Bars, Nightlife"
+    "stars", // "5"
+    "Ambience"  /*{u'divey': None, u'hipster': None, u'casual': True, u'touristy': None, u'trendy': None, u'intimate': False,
+                   u'romantic': None, u'classy': False, u'upscale': None}*/
+    );
+  var categories = [];
+  for(let i = 0; i < rawData.length; i++){
+    if(!categories.includes(rawData[i]["categories"]))
+      categories.push(rawData[i]["categories"]);
+  }
 
   return (
     <Card variant="outlined">
@@ -92,50 +25,51 @@ export default function ParallelCoordinate({ yearRange, usState, venues }) {
         <Grid container direction="row" spacing={1}>
           <Grid item xs={12} style={{ height: 600 }}>
             <ResponsiveParallelCoordinates
-              data={data}
+              data={rawData}
               variables={[
                 {
-                  key: "Race_encoded",
+                  key: "categories",
                   type: "point",
-                  values: ["Other", "Black", "Asian", "White"],
+                  values: categories,
                   padding: 0.3,
                   ticksPosition: "before",
-                  legend: "Race_encoded",
+                  legend: "Categories",
                   legendPosition: "start",
-                  legendOffset: 20,
+                  legendOffset: 40,
                 },
                 {
-                  key: "Weekday",
-                  type: "point",
-                  values: weekdays,
-                  ticksPosition: "after",
-                  legend: "Weekday",
+                  key: "opening_hours",
+                  type: "linear",
+                  min: 0,
+                  max: 200,
+                  legend: "Opening Hours",
                   legendPosition: "start",
-                  legendOffset: 20,
+                  legendOffset: 40,
                 },
                 {
-                  key: "Venue",
-                  type: "point",
-                  value: Object.keys(synonyms),
-                  legend: "Venue",
+                  key: "stars",
+                  type: "linear",
+                  min: 0,
+                  max: 5,
+                  legend: "Overall Reviews",
                   legendPosition: "start",
                   legendOffset: -20,
                 },
                 {
-                  key: "Fatalities",
-                  type: "linear",
-                  min: 0,
-                  max: 40,
-                  legend: "Fatalities",
+                  key: "ambience",
+                  type: "point",
+                  value: ["divey", "hipster", "casual","touristy", "trendy", "intimate", "romantic", "classy", "upscale"],
+                  ticksPosition: "after",
+                  legend: "Ambience",
                   legendPosition: "start",
                   legendOffset: -20,
                 },
               ]}
-              margin={{ top: 20, right: 70, bottom: 20, left: 60 }}
-              colors={(item) => {
-                return getStanceColor(getPoliticalStance(item["S#"]));
-              }}
-              lineOpacity={12 / data.length}
+              margin={{ top: 20, right: 70, bottom: 20, left: 70 }}
+              // colors={(item) => {
+              //   return getStanceColor(getPoliticalStance(item["S#"]));
+              // }}
+              lineOpacity={12 / rawData.length}
               theme={{
                 axis: {
                   domain: {

@@ -97,14 +97,14 @@ export function loadParallelCoordinateData(include = true, usState, ...attribute
     return new_json;
 }
 
-export function loadRankingData(usState){
+export function loadRankingData(usState) {
     // var result = rankingData.filter(res => res["state_Full"] === usState || usState === "")
     // console.log(result);
     // console.log(rankingData);
     rankingData = rankingData.sort((a, b) => {
-        if(a.value > b.value){
+        if (a.value > b.value) {
             return -1;
-        }   
+        }
     });
     console.log(rankingData);
     return rankingData;

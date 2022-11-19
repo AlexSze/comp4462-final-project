@@ -27,6 +27,7 @@ Contributors:
   > 
   > # 3. install the packages
   > npm i
+  > ( if you do not have npm on your machine, please install nodejs here: https://nodejs.org/en/download/ )
   >
   > # 3. start the local server
   > npm start

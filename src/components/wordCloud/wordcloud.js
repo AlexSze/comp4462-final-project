@@ -60,10 +60,6 @@ export default function OurWordCloud({ usState }) {
             setPath(usState.replace(/ /g, '').toLowerCase() + ".jpg");
         }
     }, [usState])
-
-    console.log(usState)
-    console.log(path)
-
     return (
         <Card variant="outlined">
             <CardContent id="word-cloud">

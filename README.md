@@ -1,7 +1,9 @@
-# Restaurant Analysis from Yelp Dataset
+# Restaurant Analysis
 
 ### About
-This is the group project of Group 6 in COMP4462 Data Visualization.
+This is the group project of Group 6 in COMP4462 Data Visualization. 
+
+This dashboard shows data of restaurants'reviews in America. Yelp dataset was used from Kaggle.
 
 ### Deployment
   > ```

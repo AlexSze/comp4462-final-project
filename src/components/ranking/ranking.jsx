@@ -27,7 +27,7 @@ export default function Ranking(usState) {
                         <BarChart
                             xlabel="Restaurant Name"
                             ylabel="Stars"
-                            width={700}
+                            width={width * 0.3}
                             height={500}
                             margin={margin}
                             data={data}

@@ -105,6 +105,5 @@ export function loadRankingData(usState) {
             return -1;
         }
     });
-    console.log(rankingData);
     return rankingData;
 }

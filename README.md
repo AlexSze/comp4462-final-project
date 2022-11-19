@@ -3,7 +3,7 @@
 ### About
 This is the group project of Group 6 in COMP4462 Data Visualization. 
 
-This dashboard shows data of restaurants'reviews in America. Yelp dataset was used from Kaggle.
+This dashboard shows data of restaurants' reviews in US. Yelp dataset was used from Kaggle.
 
 ### Deployment
   > ```

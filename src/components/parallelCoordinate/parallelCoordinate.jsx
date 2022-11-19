@@ -13,6 +13,7 @@ export default function ParallelCoordinate({ usState }) {
   const { height, width } = UseWindowDimensions();
 
   useEffect(() => {
+    setLoading(true)
     const fetchData = async () => {
       const temp = await loadParallelCoordinateData(
         true,
@@ -39,7 +40,7 @@ export default function ParallelCoordinate({ usState }) {
     }).catch(error => {
       // handle/report error
     });
-  }, []);
+  }, [usState]);
 
   return (
     <Card variant="outlined">

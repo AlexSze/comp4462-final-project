@@ -25,13 +25,13 @@ function App() {
       <Grid container spacing={1.5} style={{ padding: 10 }}>
         <Grid item xs={5} container direction="column" spacing={2}>
           <Grid item >
-            <Map usState={usState} />
+            <Map />
           </Grid>
           <Grid item>
             <ParallelCoordinate usState={usState} />
           </Grid>
           <Grid item>
-            <Ranking usState={usState}/>
+            <Ranking usState={usState} />
           </Grid>
         </Grid>
         <Grid item xs={'auto'} container direction="column" spacing={2}>

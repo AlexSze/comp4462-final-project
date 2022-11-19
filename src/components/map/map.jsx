@@ -9,36 +9,26 @@ import UseWindowDimensions from '../../utils/dimension';
 import { ReactSpinner } from 'react-spinning-wheel';
 import 'react-spinning-wheel/dist/style.css';
 
-export default function Map({ usState }) {
+export default function Map() {
     const [data, setData] = useState(null);
     const { height, width } = UseWindowDimensions();
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
-            const temp = await loadMapData(usState);
+            const temp = await loadMapData();
             setData(temp)
         }
         fetchData()
             .catch(console.error);
+        setLoading(false)
     }, [])
 
     function stateCenter() {
-        if (usState === "") return [38, -98];
-
-        const lats = data.map((restuarant) => restuarant["coordinates"][0]);
-        const longs = data.map((restuarant) => restuarant["coordinates"][1]);
-        if (lats.length === 0) {
-            return [38, -98]
-        } else {
-            return [
-                (Math.max(...lats) + Math.min(...lats)) / 2,
-                (Math.max(...longs) + Math.min(...longs)) / 2,
-            ];
-        }
-
+        return [38, -98]
     }
 
-    const zoom = usState === "" || (stateCenter()[0] === 38 && stateCenter()[1] === -98) ? 4 : 5;
+    const zoom = (stateCenter()[0] === 38 && stateCenter()[1] === -98) ? 4 : 5;
 
     function SetView() {
         const minimap = useMap();
@@ -51,7 +41,7 @@ export default function Map({ usState }) {
             <CardContent>
                 <h2>Map</h2>
                 <div style={{ height: 350 }}>
-                    {data === null ?
+                    {loading ?
                         <Grid item align={"center"} width={width * 0.4}>
                             <ReactSpinner />
                         </Grid> : <MapContainer

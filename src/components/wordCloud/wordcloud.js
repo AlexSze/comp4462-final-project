@@ -11,6 +11,7 @@ import 'react-spinning-wheel/dist/style.css';
 export default function OurWordCloud({ usState }) {
     const [data, setData] = useState(null);
     const { height, width } = UseWindowDimensions();
+    const [loading, setLoading] = useState(true);
 
     const words = []
 
@@ -27,18 +28,20 @@ export default function OurWordCloud({ usState }) {
     });
 
     useEffect(() => {
+        setLoading(true);
         const fetchData = async () => {
             const temp = await loadWordCloudData(usState)
-            setData(temp)
+            setData(temp);
+            setLoading(false);
         }
         fetchData()
             .catch(console.error);
-    }, [])
+    }, [usState])
 
     return (
         <Card variant="outlined">
             <CardContent id="word-cloud">
-                {data === null ?
+                {loading ?
                     <Grid item align={"center"} width={width * 0.4}>
                         <ReactSpinner />
                     </Grid> : <Grid container direction="column">
@@ -46,7 +49,7 @@ export default function OurWordCloud({ usState }) {
                             <h2>Food Categories</h2>
                         </ Grid>
                         <Grid item height={height * 0.3} marginRight={height * 0.009} marginBottom={height * 0.005} >
-                            <WordCloud
+                            {words.length === 0 ? <div> No Data </div> : <WordCloud
                                 data={words}
                                 width={210}
                                 height={100}
@@ -55,7 +58,7 @@ export default function OurWordCloud({ usState }) {
                                 fill="Black"
                                 rotate={0}
                                 random={() => 1}
-                            />
+                            />}
                         </ Grid>
                     </ Grid>}
             </ CardContent>

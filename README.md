@@ -31,6 +31,7 @@ Contributors:
   >
   > # 3. start the local server
   > npm start
+  > ( Due to the overwhelming data size, it is possible for our frontend to consume all your computer memory. Please close all browser tab and try again if this problem arise.)
   
 ### How to run Backend 
   > ```

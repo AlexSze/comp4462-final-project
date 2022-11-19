@@ -4,6 +4,7 @@ import Example from './components/example';
 import {
   Grid
 } from "@mui/material";
+import Ranking from './components/ranking/ranking';
 import Map from './components/map/map';
 import ScatterPlot from './components/scatterplot/scatterplot';
 import OurWordCloud from './components/wordCloud/wordcloud';
@@ -36,7 +37,7 @@ function App() {
             <OurWordCloud usState={usState} />
           </Grid>
           <Grid item>
-            <Example />
+            <Ranking />
           </Grid>
           <Grid item>
             <ScatterPlot />

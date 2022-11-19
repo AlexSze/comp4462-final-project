@@ -32,10 +32,10 @@ function App() {
             <Example />
           </Grid>
           <Grid item>
-            <Example />
+            <Ranking />
           </Grid>
           <Grid item>
-            <Ranking />
+            <Example />
           </Grid>
         </Grid>
       </Grid>

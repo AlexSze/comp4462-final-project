@@ -10,6 +10,7 @@ export default function OurWordCloud({ usState }) {
     const { height, width } = UseWindowDimensions();
 
     const words = []
+
     for (var key in data) {
         var value = data[key];
         words.push({ text: key, value: value })
@@ -34,11 +35,11 @@ export default function OurWordCloud({ usState }) {
                             data={words}
                             width={210}
                             height={100}
-                            font="Impact"
-                            fontSize={(word) => (word.value === 0 ? 0 : 10 + word.proportion * 100)}
+                            font="Arial"
+                            fontSize={(word) => (word.value === 0 ? 0 : 10 + word.proportion * 500)}
                             fill="Black"
                             rotate={0}
-                            random={() => 4}
+                            random={() => 1}
                         />
                     </ Grid>
                 </ Grid>

@@ -9,6 +9,7 @@ import Map from './components/map/map';
 import ScatterPlot from './components/scatterplot/scatterplot';
 import OurWordCloud from './components/wordCloud/wordcloud';
 import UseWindowDimensions from './utils/dimension';
+import OurHeatMap from './components/heatmap/heatmap';
 
 function App() {
   const [usState, setUsState] = useState("");
@@ -29,7 +30,7 @@ function App() {
             <Example />
           </Grid>
           <Grid item>
-            <Example />
+            <Ranking />
           </Grid>
         </Grid>
         <Grid item xs={'auto'} container direction="column" spacing={2}>
@@ -37,7 +38,7 @@ function App() {
             <OurWordCloud usState={usState} />
           </Grid>
           <Grid item>
-            <Ranking />
+            <OurHeatMap usState={usState} />
           </Grid>
           <Grid item>
             <ScatterPlot />

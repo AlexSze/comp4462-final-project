@@ -1,6 +1,7 @@
 import mapData from "../data/mapData.json";
 import scatterPlot from "../data/scatterPlot.json";
 import wordCloudData from "../data/wordCloudData.json";
+import heatMapData from "../data/heatMapData.json";
 
 export function loadMapData(usState) {
     var result = mapData.filter(res => res["state"] == usState || usState == "")
@@ -30,4 +31,8 @@ export function loadWordCloudData(usState) {
     })
 
     return result
+}
+
+export function loadHeatMapData(usState) {
+    return heatMapData
 }

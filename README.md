@@ -9,13 +9,13 @@ The dashboard below shows data of restaurants' reviews in the US. Yelp dataset a
 Data preprocessing code can be found in the Jupyter notebook in {xx} directory. The dataset could be unzip and run in the Jupyter notebook.
 
 Contributors:
-+ {xx} Front-end dashboard
++ {Alex Sze} Front-end Developer - Map, Word Cloud, Heatmap, Scatter Plot and Foundation
 + {xx} Front-end dashboard
 + {xx} Front-end dashboard
 + {yy} Data preprocessing
 + {yy} Data preprocessing
 
-### Deployment
+### How to run Dashboard 
   > ```
   > # 1. clone our project code
   > git clone https://github.com/AlexSze/comp4462-final-project
@@ -23,19 +23,18 @@ Contributors:
   > 
   > # 2. unzip the dataset
   > unzip the ./src/data/yelp_restaurants_review_Obesity.json.zip
+  > unzip the ./src/data/heatMapData.json.zip
   > 
   > # 3. install the packages
   > npm i
   >
   > # 3. start the local server
   > npm start
-
-### Deploying to GitHub Pages
-To deploy our dashboard website to GitHub Pages, run the following command
-  > ```
-  >npm run deploy
   
-##
+### How to run Backend 
+  > ```
+  > # 1. 
+
 
 
   

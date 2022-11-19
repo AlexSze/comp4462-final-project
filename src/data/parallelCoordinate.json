@@ -1,34 +1,16 @@
 [  
     {
-        "state": "AZ",
         "state_Full": "Arizona",
-        "prevalence": "31.3",
-        "name": "Home Plate Sports Pub",
-        "city": "Tucson",
-        "latitude": "32.206315",
-        "longitude": "-110.887843",
         "stars": "3.5",
-        "review_count": "56",
         "categories": "Bars, Restaurants, Sports Bars, Nightlife",
         "opening_hours": "112.0",
-        "Ambience": "{u'divey': None, u'hipster': None, u'casual': True, u'touristy': None, u'trendy': None, u'intimate': False, u'romantic': None, u'classy': False, u'upscale': None}",
-        "review_stars": "5",
-        "date": "2017-08-16 17:18:32"
+        "Ambience": "{u'divey': None, u'hipster': None, u'casual': True, u'touristy': None, u'trendy': None, u'intimate': False, u'romantic': None, u'classy': False, u'upscale': None}"
     }, 
     {
-        "state": "PA",
         "state_Full": "Pennsylvania",
-        "prevalence": "33.3",
-        "name": "K-POT Korean BBQ & Hot Pot",
-        "city": "Philadelphia",
-        "latitude": "40.0924685",
-        "longitude": "-74.9629393",
         "stars": "4.5",
-        "review_count": "349",
         "categories": "Korean, Barbeque, Hot Pot, Restaurants",
         "opening_hours": "75.5",
-        "Ambience": "{u'divey': None, u'hipster': None, u'casual': True, u'touristy': None, u'trendy': None, u'intimate': None, u'romantic': False, u'classy': True, u'upscale': False}",
-        "review_stars": "5",
-        "date": "2019-05-26 00:12:10"
+        "Ambience": "{u'divey': None, u'hipster': None, u'casual': True, u'touristy': None, u'trendy': None, u'intimate': None, u'romantic': False, u'classy': True, u'upscale': False}"
     }
 ]

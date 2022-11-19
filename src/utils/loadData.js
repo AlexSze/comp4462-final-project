@@ -56,14 +56,11 @@ export function loadParallelCoordinateData(include = true, usState, ...attribute
             )
         )
     );
-    // console.log(result);
-    // return result;
 
     let new_json = [];
     for (let i = 0; i < result.length; i++) {
         const dummy_Ambience = result[i]["Ambience"].split(", ");
         var ambience;
-        // console.log(dummy_Ambience);
         for (let a = 0; a < dummy_Ambience.length; a++) {
             if (dummy_Ambience[a].includes("True")) {
                 if (dummy_Ambience[a].includes("divey"))
@@ -86,7 +83,6 @@ export function loadParallelCoordinateData(include = true, usState, ...attribute
                     ambience = "upscale";
             }
         }
-        console.log(ambience);
         const dummy_categories = result[i]["categories"].split(", ");
         const opening_hours = result[i]["opening_hours"];
         const stars = result[i]["stars"];
@@ -98,5 +94,4 @@ export function loadParallelCoordinateData(include = true, usState, ...attribute
     }
     console.log(new_json);
     return new_json;
-
 }

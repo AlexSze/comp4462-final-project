@@ -5,7 +5,8 @@ import heatMapData from "../data/heatMapData.json";
 
 import parallelCoordinateData from "../data/parallelCoordinate.json"
 import rankingData from "../data/ranking.json"
-export function loadMapData() {
+export function loadMapData(usState) {
+    // var result = mapData.filter(res => res["state"] == usState || usState == "")
     return mapData
 }
 

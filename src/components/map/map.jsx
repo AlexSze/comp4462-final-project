@@ -8,31 +8,33 @@ import { useEffect, useState } from 'react';
 import UseWindowDimensions from '../../utils/dimension';
 import { ReactSpinner } from 'react-spinning-wheel';
 import 'react-spinning-wheel/dist/style.css';
+import { statesCenter } from '../../const/states';
 
-export default function Map() {
+export default function Map({ usState, setUsState }) {
     const [data, setData] = useState(null);
     const { height, width } = UseWindowDimensions();
-    const [loading, setLoading] = useState(true);
+    const [isloading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
             const temp = await loadMapData();
             setData(temp)
         }
-        fetchData()
-            .catch(console.error);
-        setLoading(false)
-    }, [])
+        fetchData().then(_ => {
+            setIsLoading(false)
+        }).catch(console.error);
+    }, [usState])
 
-    function stateCenter() {
-        return [38, -98]
+    function setStateCenter() {
+        if (usState === "") return [38, -98];
+        return [statesCenter[usState][0], statesCenter[usState][1]]
     }
 
-    const zoom = (stateCenter()[0] === 38 && stateCenter()[1] === -98) ? 4 : 5;
+    const zoom = (setStateCenter()[0] === 38 && setStateCenter()[1] === -98) ? 4 : 5;
 
     function SetView() {
         const minimap = useMap();
-        minimap.setView(stateCenter(), zoom);
+        minimap.setView(setStateCenter(), zoom);
         return null;
     }
 
@@ -41,7 +43,7 @@ export default function Map() {
             <CardContent>
                 <h2>Map</h2>
                 <div style={{ height: 350 }}>
-                    {loading ?
+                    {isloading ?
                         <Grid item align={"center"} width={width * 0.4}>
                             <ReactSpinner />
                         </Grid> : <MapContainer
@@ -56,6 +58,17 @@ export default function Map() {
                                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                             />
                             <SetView />
+                            {usState === "" && Object.keys(statesCenter).map((item) => {
+                                return (
+                                    <CircleMarker
+                                        key={item}
+                                        center={statesCenter[item]}
+                                        stroke={false}
+                                        fillColor="black"
+                                        fillOpacity={1}
+                                        radius={10} />
+                                );
+                            })}
                             {data.map((restuarant) => {
                                 const r_key = restuarant["key"];
                                 const mean_rating = restuarant["mean_rating"];

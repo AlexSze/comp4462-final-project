@@ -61,7 +61,7 @@ export default function ParallelCoordinate({ usState }) {
                     values: categories,
                     padding: 0.3,
                     ticksPosition: "before",
-                    legend: "Categories",
+                    // legend: "Categories",
                     legendPosition: "start",
                     legendOffset: 40,
                   },
@@ -70,7 +70,7 @@ export default function ParallelCoordinate({ usState }) {
                     type: "linear",
                     min: 0,
                     max: 200,
-                    legend: "Opening Hours",
+                    // legend: "Opening Hours",
                     legendPosition: "start",
                     legendOffset: 40,
                   },
@@ -79,7 +79,7 @@ export default function ParallelCoordinate({ usState }) {
                     type: "linear",
                     min: 0,
                     max: 5,
-                    legend: "Overall Reviews",
+                    // legend: "Overall Reviews",
                     legendPosition: "start",
                     legendOffset: -20,
                   },
@@ -88,17 +88,17 @@ export default function ParallelCoordinate({ usState }) {
                     type: "point",
                     value: ["divey", "hipster", "casual", "touristy", "trendy", "intimate", "romantic", "classy", "upscale"],
                     ticksPosition: "after",
-                    legend: "Ambience",
+                    // legend: "Ambience",
                     legendPosition: "start",
                     legendOffset: -20,
                   },
                 ]}
                 layout={"horizontal"}
-                margin={{ top: 20, right: 70, bottom: 20, left: 70 }}
+                margin={{ top: 20, right: 60, bottom: 20, left: 60 }}
                 // colors={(item) => {
                 //   return getStanceColor(getPoliticalStance(item["S#"]));
                 // }}
-                lineOpacity={12 / rawData.length}
+                lineOpacity={40 / rawData.length}
                 theme={{
                   axis: {
                     domain: {
@@ -110,6 +110,11 @@ export default function ParallelCoordinate({ usState }) {
                   },
                 }}
               />
+              <h4 style={{left:"20px", top: "-30px", position: "relative", transform: [{rotate: "-180deg"}]}}>Categories</h4>
+              <h4 style={{left:"220px", top: "-72px", position: "relative", transform: [{rotate: "-180deg"}]}}>Opening Hours </h4>
+              <h4 style={{left:"250px", top: "-95px", position: "relative", transform: [{rotate: "-180deg"}]}}>(weekly) </h4>
+              <h4 style={{left:"420px", top: "-158px", position: "relative", transform: [{rotate: "-180deg"}]}}>Overall Reviews</h4>
+              <h4 style={{left:"650px", top: "-200px", position: "relative", transform: [{rotate: "-180deg"}]}}>Ambience</h4>
             </Grid>}
           <Grid item></Grid>
         </Grid>

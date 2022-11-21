@@ -40,7 +40,46 @@ export function loadHeatMapData(usState) {
 }
 
 export function loadParallelCoordinateData(include = true, usState, ...attributes) {
+    var food_categories; // 10 categories from cloud (hard code)
+    if(usState === "")
+        food_categories = ["Burgers", "Bars", "Nightlife", "Pizza", "Italian", "Seafood", "Salad", "Beer", "Spanish", "Thai"];
+    else if(usState === "Arizona")
+        food_categories = ["Salad", "Mexican", "Beer", "Burgers", "Bars", "Thai", "Pizza", "Nightlife", "Italian", "Tacos"];
+    else if(usState === "California")
+        food_categories = ["Salad", "Mexican", "Japanese", "Burgers", "Bars", "Cafes", "Pizza", "Nightlife", "Fashion", "Seafood"];
+    else if(usState === "Delaware")
+        food_categories = ["Filipino", "Mexican", "Italian", "Pizza", "Irish", "Nightlife", "Bars", "Burgers", "Delis", "Sandwiches"];
+    else if(usState === "Florida")
+        food_categories = ["French", "Salad", "Pizza", "Bars", "Cafes", "Burgers", "Nightlife", "Italian", "Seafood", "Bars"];
+    else if(usState === "Idaho")
+        food_categories = ["Pizza", "Delis", "Coffee & Tea", "Nightlife", "Bars", "Beer", "Cocktail Bars", "Thai", "Salad", "Tours"];
+    else if(usState === "Illinois")
+        food_categories = ["Pizza", "Delis", "Greek", "Nightlife", "Bars", "Beer", "Soup", "Thai", "Salad", "Irish"];
+    else if(usState === "Indiana")
+        food_categories = ["Pizza", "Mexican", "Coffee & Tea", "Nightlife", "Bars", "Beer", "Caterers", "Thai", "Lounges", "Irish"];
+    else if(usState === "Louisiana")
+        food_categories = ["Pizza", "Mexican", "Cafes", "Nightlife", "Bars", "Burgers", "Salad", "Thai", "Lounges", "Irish"];
+    else if(usState === "Missouri")
+        food_categories = ["Pizza", "Mexican", "Delis", "Nightlife", "Bars", "Burgers", "Cafes", "Thai", "Greek", "Irish"];
+    else if(usState === "Nevada")
+        food_categories = ["Pizza", "Casinos", "Delis", "Nightlife", "Bars", "Burgers", "Cafes", "Thai", "Seafood", "Irish"];
+    else if(usState === "New Jersey")
+        food_categories = ["Pizza", "Pita", "Delis", "Nightlife", "Bars", "Burgers", "Cafes", "Thai", "Salad", "Irish"];
+    else if(usState === "Pennsylvania")
+        food_categories = ["Pizza", "Bagels", "Sandwiches", "Nightlife", "Bars", "Beer", "Cupcakes", "Thai", "Korean", "Bubble Tea"];
+    else if(usState === "Tennessee")
+        food_categories = ["Pizza", "Bakeries", "Mexican", "Burgers", "Bars", "Beer", "Irish", "Thai", "Beer", "Salad"];
     var result = parallelCoordinateData.filter(res => res["state_Full"] === usState || usState === "");
+    // result = result.filter(res=> {
+    //     var check = true;
+    //     for(let i = 0; i < res["categories"].length; i++){
+    //         if(!food_catergories.includes(res["categories"][i]))
+    //             check = false;
+    //     }
+    //     return check;
+    // });
+    console.log(food_categories);
+    console.log(result.slice(0, 10));
     // console.log(usState);
     // console.log(result);
 
@@ -62,41 +101,49 @@ export function loadParallelCoordinateData(include = true, usState, ...attribute
 
     let new_json = [];
     for (let i = 0; i < result.length; i++) {
-        const dummy_Ambience = result[i]["Ambience"].split(", ");
-        var ambience;
+        const dummy_Ambience = result[i]["Ambience"];
+        var Ambiences = [];
+        // if(result[i]["Ambience"] === "None")
+        //     break;
         for (let a = 0; a < dummy_Ambience.length; a++) {
-            if (dummy_Ambience[a].includes("True")) {
-                if (dummy_Ambience[a].includes("divey"))
-                    ambience = "divey";
-                else if (dummy_Ambience[a].includes("hipster"))
-                    ambience = "hipster";
-                else if (dummy_Ambience[a].includes("casual"))
-                    ambience = "casual";
-                else if (dummy_Ambience[a].includes("touristy"))
-                    ambience = "touristy";
-                else if (dummy_Ambience[a].includes("trendy"))
-                    ambience = "trendy";
-                else if (dummy_Ambience[a].includes("intimate"))
-                    ambience = "intimate";
-                else if (dummy_Ambience[a].includes("romantic"))
-                    ambience = "romantic";
-                else if (dummy_Ambience[a].includes("classy"))
-                    ambience = "classy";
-                else if (dummy_Ambience[a].includes("upscale"))
-                    ambience = "upscale";
-            }
+            if (dummy_Ambience[a].includes("divey"))
+                Ambiences.push("divey");
+            else if (dummy_Ambience[a].includes("hipster"))
+                Ambiences.push("hipster");
+            else if (dummy_Ambience[a].includes("casual"))
+                Ambiences.push("casual");
+            else if (dummy_Ambience[a].includes("touristy"))
+                Ambiences.push("touristy");
+            else if (dummy_Ambience[a].includes("trendy"))
+                Ambiences.push("trendy");
+            else if (dummy_Ambience[a].includes("intimate"))
+                Ambiences.push("intimate");
+            else if (dummy_Ambience[a].includes("romantic"))
+                Ambiences.push("romantic");
+            else if (dummy_Ambience[a].includes("classy"))
+                Ambiences.push("classy");
+            else if (dummy_Ambience[a].includes("upscale"))
+                Ambiences.push("upscale");
+            else if(dummy_Ambience[a].includes("None"))
+                Ambiences.push("None");
+            
         }
         const dummy_categories = result[i]["categories"];
         const opening_hours = result[i]["opening_hours"];
         const stars = result[i]["stars"];
 
         for (let j = 0; j < dummy_categories.length; j++) {
-            const categories = dummy_categories[j];
-            new_json.push({ ambience, categories, opening_hours, stars });
+            if(food_categories.includes(dummy_categories[j]))
+                for(let z = 0; z < Ambiences.length; z++){
+                    const categories = dummy_categories[j];
+                    const ambience = Ambiences[z];
+                    new_json.push({ ambience, categories, opening_hours, stars });
+                }
+            
         }
     }
     // console.log(new_json);
-    return new_json;
+    return new_json.slice(0, 100);
 }
 
 export function loadRankingData(usState) {
@@ -107,6 +154,6 @@ export function loadRankingData(usState) {
             return -1;
         }
     });
-    // console.log(result.slice(0,10));
+    console.log(result.slice(0,10));
     return result.slice(0, 10);
 }

@@ -1,0 +1,16 @@
+[  
+    {
+        "state_Full": "Arizona",
+        "stars": "3.5",
+        "categories": ["Bars", "Restaurants", "Sports Bars", "Nightlife"],
+        "opening_hours": "112.0",
+        "Ambience": "{u'divey': None, u'hipster': None, u'casual': True, u'touristy': None, u'trendy': None, u'intimate': False, u'romantic': None, u'classy': False, u'upscale': None}"
+    }, 
+    {
+        "state_Full": "Pennsylvania",
+        "stars": "4.5",
+        "categories": ["Korean", "Barbeque", "Hot Pot", "Restaurants"],
+        "opening_hours": "75.5",
+        "Ambience": "{u'divey': None, u'hipster': None, u'casual': True, u'touristy': None, u'trendy': None, u'intimate': None, u'romantic': False, u'classy': True, u'upscale': False}"
+    }
+]

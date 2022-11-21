@@ -1,0 +1,22 @@
+[  
+    {
+        "state_Full": "Arizona",
+        "text": "Epicurean Garage",
+        "value": 4.0    
+    },
+    {
+        "state_Full": "Louisiana",
+        "text": "Home Plate Sports Pub",
+        "value": 3.5
+    },
+    {
+        "state_Full": "Louisiana",
+        "text": "KFC",
+        "value": 4.6
+    },
+    {
+        "state_Full": "Nevada",
+        "text": "McDonald",
+        "value": 3.7
+    }
+]

@@ -40,7 +40,9 @@ export function loadHeatMapData(usState) {
 }
 
 export function loadParallelCoordinateData(include = true, usState, ...attributes) {
-    var result = parallelCoordinateData.filter(res => res["state_Full"] === usState || usState === "")
+    var result = parallelCoordinateData.filter(res => res["state_Full"] === usState || usState === "");
+    // console.log(usState);
+    // console.log(result);
 
     for (let i = 0; i < attributes.length; ++i) {
         if (!attributes.includes(attributes[i])) {
@@ -98,13 +100,13 @@ export function loadParallelCoordinateData(include = true, usState, ...attribute
 }
 
 export function loadRankingData(usState) {
-    // var result = rankingData.filter(res => res["state_Full"] === usState || usState === "")
-    // console.log(result);
-    // console.log(rankingData);
-    rankingData = rankingData.sort((a, b) => {
+    var result = rankingData.filter(res => res["state_Full"] === usState || usState === "" || rankingData.value > 4.0);
+
+    result = result.sort((a, b) => {
         if (a.value > b.value) {
             return -1;
         }
     });
-    return rankingData;
+    // console.log(result.slice(0,10));
+    return result.slice(0, 10);
 }

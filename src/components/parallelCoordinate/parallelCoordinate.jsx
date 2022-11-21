@@ -7,6 +7,7 @@ import 'react-spinning-wheel/dist/style.css';
 import { useState, useEffect } from "react";
 
 export default function ParallelCoordinate({ usState }) {
+
   const [loading, setLoading] = useState(true);
   const [categories, setCategories] = useState(null);
   const [rawData, setRawData] = useState(null);
@@ -92,6 +93,7 @@ export default function ParallelCoordinate({ usState }) {
                     legendOffset: -20,
                   },
                 ]}
+                layout={"horizontal"}
                 margin={{ top: 20, right: 70, bottom: 20, left: 70 }}
                 // colors={(item) => {
                 //   return getStanceColor(getPoliticalStance(item["S#"]));

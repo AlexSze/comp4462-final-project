@@ -25,7 +25,7 @@ function App() {
       <Grid container spacing={1.5} style={{ padding: 10 }}>
         <Grid item xs={5} container direction="column" spacing={2}>
           <Grid item >
-            <Map />
+            <Example />
           </Grid>
           <Grid item>
             <ParallelCoordinate usState={usState} />

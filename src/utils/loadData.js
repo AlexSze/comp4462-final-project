@@ -70,16 +70,8 @@ export function loadParallelCoordinateData(include = true, usState, ...attribute
     else if(usState === "Tennessee")
         food_categories = ["Pizza", "Bakeries", "Mexican", "Burgers", "Bars", "Beer", "Irish", "Thai", "Beer", "Salad"];
     var result = parallelCoordinateData.filter(res => res["state_Full"] === usState || usState === "");
-    // result = result.filter(res=> {
-    //     var check = true;
-    //     for(let i = 0; i < res["categories"].length; i++){
-    //         if(!food_catergories.includes(res["categories"][i]))
-    //             check = false;
-    //     }
-    //     return check;
-    // });
-    console.log(food_categories);
-    console.log(result.slice(0, 10));
+    // console.log(food_categories);
+    // console.log(result.slice(0, 10));
     // console.log(usState);
     // console.log(result);
 
@@ -155,5 +147,5 @@ export function loadRankingData(usState) {
         }
     });
     console.log(result.slice(0,10));
-    return result.slice(0, 10);
+    return result.slice(0, 5);
 }

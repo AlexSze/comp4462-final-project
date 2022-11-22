@@ -22,11 +22,11 @@ function App() {
         usState={usState}
         setUsState={setUsState}
       />
-      <Grid item container xs={12} style={{ padding: 2 }}>
-        <Map usState={usState} />
+      <Grid item container xs={12} style={{ padding: 6 }}>
+        {/* <Map usState={usState} /> */}
       </Grid>
-      <Grid item container direction="row" xs={12}>
-        <Grid item container direction="column" xs={6} spacing={2}>
+      <Grid item container direction="row" xs={12} >
+        <Grid item container direction="column" xs={6} spacing={2} style={{ paddingRight: 2 }}>
           <Grid item container>
             <ParallelCoordinate usState={usState} />
           </Grid>

@@ -44,10 +44,11 @@ export default function Map({ usState, setUsState }) {
                 <h2>Map</h2>
                 <div style={{ height: 350 }}>
                     {isloading ?
-                        <Grid item align={"center"} width={width * 0.4}>
+                        <Grid item xs={12} align={"center"} width={width * 0.85}>
                             <ReactSpinner />
                         </Grid> : <MapContainer
                             style={{ height: 350 }}
+                            width={width * 0.85}
                             center={[38, -98]}
                             zoom={4}
                             minZoom={3}

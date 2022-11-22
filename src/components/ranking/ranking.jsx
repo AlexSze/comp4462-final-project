@@ -20,11 +20,12 @@ export default function Ranking({ usState }) {
     for(let i = 0; i < data.length; i++){
         name.push(data[i]["text"]);
     }
+    // console.log(name);
     var temp = data;
-    for(let i = 0; i < temp.length; i++){
-        temp[i]["text"] = i===0?" ":temp[i-1]["text"] + " ";
-    }
-    console.log(name);
+    // for(let i = 0; i < temp.length; i++){
+    //     temp[i]["text"] = i===0?" ":temp[i-1]["text"] + " ";
+    // }
+    // console.log(name);
     
     return (
         <Card variant="outlined">
@@ -64,3 +65,6 @@ export default function Ranking({ usState }) {
         </ Card >
     )
 }
+
+
+

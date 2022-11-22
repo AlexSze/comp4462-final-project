@@ -34,7 +34,7 @@ export default function Ranking({ usState }) {
             <CardContent>
                 {/* TODO */}
                 {/* remarks: 1. width change to adaptive 2. data procecing 3. handle on hover*/}
-                <Grid container direction="column">
+                <Grid container direction="column" width={width * 0.4}>
                     <Grid item align={"left"} >
                         <h2>Restaurant Ranking barChart</h2>
                     </ Grid>

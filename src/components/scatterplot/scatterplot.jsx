@@ -102,7 +102,7 @@ export default function ScatterPlot() {
                     <Grid item align={"left"} >
                         <h2>{attrToText(attr)} vs Obesity Prevalence</h2>
                     </ Grid>
-                    <Grid item align={"right"} >
+                    <Grid item align={"right"} marginRight={5}>
                         <AttrDropdown attr={attr} setAttrState={setAttrState} />
                     </ Grid>
                     <Grid item marginLeft={margin.left / 7}>

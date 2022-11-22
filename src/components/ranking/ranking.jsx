@@ -143,7 +143,7 @@ export default function Ranking({ usState }) {
       <div style={{ maxWidth: width*0.49 }}>
       <Card variant="outlined">
         <CardContent>
-            <h1>Overall Review of Restaurants</h1>
+            <h1>Overall Review of Restaurants (No.of restuarants vs stars)</h1>
             <Grid item width={width * 0.49} height={height * 0.7}>
                 <Bar
                 data={{
@@ -177,6 +177,7 @@ export default function Ranking({ usState }) {
                     },
                 }}
                 />
+                {/* <h3 style={{left:"170%", top: "300%", position: "absolute", transform: [{rotate: "-180deg"}]}}>Stars</h3> */}
             </Grid>
         </CardContent>
       </Card>

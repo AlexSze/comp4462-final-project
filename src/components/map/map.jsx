@@ -39,6 +39,7 @@ export default function Map({ usState, setUsState }) {
     }
 
     return (
+        
         <Card variant="outlined">
             <CardContent>
                 <h2>Map</h2>
@@ -46,7 +47,8 @@ export default function Map({ usState, setUsState }) {
                     {isloading ?
                         <Grid item xs={12} align={"center"} width={width * 0.85}>
                             <ReactSpinner />
-                        </Grid> : <MapContainer
+                        </Grid> : <Grid item xs={12} align={"center"} width={width * 0.85}>
+                            <MapContainer
                             style={{ height: 350 }}
                             width={width * 0.85}
                             center={[38, -98]}
@@ -97,7 +99,8 @@ export default function Map({ usState, setUsState }) {
                                     </CircleMarker>
                                 )
                             })}
-                        </MapContainer>}
+                        </MapContainer>
+                    </ Grid>}
                 </div>
             </CardContent>
         </Card >

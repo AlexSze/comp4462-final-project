@@ -23,7 +23,7 @@ function App() {
         setUsState={setUsState}
       />
       <Grid item container xs={12} style={{ padding: 6 }}>
-        {/* <Map usState={usState} /> */}
+        <Map usState={usState} />
       </Grid>
       <Grid item container direction="row" xs={12} >
         <Grid item container direction="column" xs={6} spacing={2} style={{ paddingRight: 2 }}>

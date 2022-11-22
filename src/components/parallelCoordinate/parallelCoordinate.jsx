@@ -51,7 +51,7 @@ export default function ParallelCoordinate({ usState }) {
           {loading ?
             <Grid item align={"center"} width={width * 0.4}>
               <ReactSpinner />
-            </Grid> : <Grid item width={width * 0.4} height={height*0.7}>
+            </Grid> : <Grid item width={width * 0.4} height={height*0.9}>
               <ResponsiveParallelCoordinates
                 data={rawData}
                 variables={[

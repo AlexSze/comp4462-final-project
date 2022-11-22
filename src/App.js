@@ -26,7 +26,7 @@ function App() {
         <Map usState={usState} />
       </Grid>
       <Grid item container direction="row" xs={12} >
-        <Grid item container direction="column" xs={6} spacing={2} style={{ paddingRight: 2 }}>
+        <Grid item container direction="column" xs={6} style={{ padding: 6 }}>
           <Grid item container>
             <ParallelCoordinate usState={usState} />
           </Grid>
@@ -35,7 +35,7 @@ function App() {
           </Grid>
         </Grid>
 
-        <Grid item container direction="column" xs={6} spacing={2}>
+        <Grid item container direction="column" xs={6} style={{ padding: 6 }}>
           <Grid item container>
             <OurWordCloud usState={usState} />
           </Grid>

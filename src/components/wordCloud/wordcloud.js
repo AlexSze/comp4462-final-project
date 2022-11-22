@@ -66,7 +66,7 @@ export default function OurWordCloud({ usState }) {
                 {loading ?
                     <Grid item align={"center"} width={width * 0.4}>
                         <ReactSpinner />
-                    </Grid> : <Grid container direction="column">
+                    </Grid> : <Grid container direction="column" width={width * 0.4}>
                         <Grid item align={"left"} >
                             <h2>Food Categories</h2>
                         </ Grid>

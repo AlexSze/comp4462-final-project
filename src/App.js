@@ -22,26 +22,27 @@ function App() {
         usState={usState}
         setUsState={setUsState}
       />
-      <Grid container spacing={1.5} style={{ padding: 10 }}>
-        <Grid item xs={5} container direction="column" spacing={2}>
-          <Grid item >
-            {/* <Map usState={usState} /> */}
-          </Grid>
-          <Grid item>
+      <Grid item container xs={12} style={{ padding: 2 }}>
+        <Map usState={usState} />
+      </Grid>
+      <Grid item container direction="row" xs={12}>
+        <Grid item container direction="column" xs={6} spacing={2}>
+          <Grid item container>
             <ParallelCoordinate usState={usState} />
           </Grid>
-          <Grid item>
+          <Grid item container>
             <Ranking usState={usState} />
           </Grid>
         </Grid>
-        <Grid item xs={'auto'} container direction="column" spacing={2}>
-          <Grid item width={width / 2.2} >
+
+        <Grid item container direction="column" xs={6} spacing={2}>
+          <Grid item container>
             <OurWordCloud usState={usState} />
           </Grid>
-          <Grid item>
+          <Grid item container>
             <OurHeatMap usState={usState} />
           </Grid>
-          <Grid item>
+          <Grid item container>
             <ScatterPlot />
           </Grid>
         </Grid>

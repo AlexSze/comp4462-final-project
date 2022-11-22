@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import UseWindowDimensions from '../../utils/dimension';
 import { ReactSpinner } from 'react-spinning-wheel';
 import 'react-spinning-wheel/dist/style.css';
+import { HeatMapLegend } from "./heatMapLegend";
 
 export default function OurHeatMap({ usState }) {
     const [loading, setLoading] = useState(true);
@@ -56,6 +57,12 @@ export default function OurHeatMap({ usState }) {
                             <div style={{ fontSize: "13px" }}>
                                 <HeatMap xLabels={xLabels} yLabels={yLabels} data={newData} background={"#EA0014"} />
                             </div>
+                        </Grid>
+                        <Grid item>
+                            <HeatMapLegend />
+                        </Grid>
+                        <Grid item align={"left"}>
+                            No. of Reviews
                         </Grid>
                     </Grid>}
             </CardContent>

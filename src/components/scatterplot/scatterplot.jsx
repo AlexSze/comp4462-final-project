@@ -98,11 +98,11 @@ export default function ScatterPlot() {
     return (
         <Card variant="outlined">
             <CardContent >
-                <Grid container spacing={1} direction="column" width={theWidth}>
+                <Grid container direction="column" width={width * 0.4}>
                     <Grid item align={"left"} >
                         <h2>{attrToText(attr)} vs Obesity Prevalence</h2>
                     </ Grid>
-                    <Grid item align={"right"} marginRight={0.5}>
+                    <Grid item align={"right"} >
                         <AttrDropdown attr={attr} setAttrState={setAttrState} />
                     </ Grid>
                     <Grid item marginLeft={margin.left / 7}>

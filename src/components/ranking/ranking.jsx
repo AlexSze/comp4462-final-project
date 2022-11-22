@@ -7,6 +7,7 @@ import UseWindowDimensions from "../../utils/dimension";
 import { loadRankingData } from "../../utils/loadData";
 import {React, useRef, useEffect} from "react";
 import {RestaurantName} from './restaurantName';
+import { Bar } from "react-chartjs-2";
 
 export default function Ranking({ usState }) {
     const data = loadRankingData(usState);
@@ -46,6 +47,7 @@ export default function Ranking({ usState }) {
                             margin={margin}
                             data={temp}
                             onBarClick={handleBarClick}
+                            backgroundcolor={"red"}
                         />
                         <h2 style={{left:"560px", top: "-60px", position: "relative", transform: [{rotate: "-180deg"}]}}>Restaurant Name</h2>
                         <RestaurantName name={name[0]} x={"-280px"} y={"260px"}/>
@@ -66,5 +68,62 @@ export default function Ranking({ usState }) {
     )
 }
 
+// export default function Ranking({usState}) {
+//     const data = loadRankingData(usState);
+//     const { height, width } = UseWindowDimensions();
 
+//     var label = [];
+//     var stars = [];
+//     for(let i = 0; i < data.length; i++){
+//         label.push(data[i]["text"]);
+//         stars.push(data[i]["value"]);
+//     }
+
+//     return (
+//       <div className="App">
+//         <h1>GEEKSFORGEEKS BAR CHART REACTJS</h1>
+//         <div style={{ maxWidth:  width}}>
+//           <Bar
+//             data={{
+//               // Name of the variables on x-axies for each bar
+//               labels: label,
+//               datasets: [
+//                 {
+//                   // Label for bars
+//                   label: "total count/value",
+//                   // Data or value of your each variable
+//                   data: stars,
+//                   // Color of each bar
+//                   backgroundColor: ["aqua", "green", "red", "yellow"],
+//                   // Border color of each bar
+//                   borderColor: ["aqua", "green", "red", "yellow"],
+//                   borderWidth: 0.5,
+//                 },
+//               ],
+//             }}
+//             // Height of graph
+//             height={height}
+//             options={{
+//               maintainAspectRatio: false,
+//               scales: {
+//                 yAxes: [
+//                   {
+//                     ticks: {
+//                       // The y-axis value will start from zero
+//                       beginAtZero: true,
+//                     },
+//                   },
+//                 ],
+//               },
+//               legend: {
+//                 labels: {
+//                   fontSize: 15,
+//                 },
+//               },
+//             }}
+//           />
+//         </div>
+//       </div>
+//     );
+//   }
 

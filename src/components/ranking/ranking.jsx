@@ -140,40 +140,48 @@ export default function Ranking({ usState }) {
     console.log(values);
   return (
     <div>
-      <h1>Number of Restaurants</h1>
-      <div style={{ maxWidth: width*0.7 }}>
-        <Bar
-          data={{
-            labels: labels,
-            datasets: [
-              {
-                data: values,
-                backgroundColor: ["#EA0014", "#EA0014", "#EA0014", "#EA0014", "#EA0014"],
-                borderColor: ["#EA0014", "#EA0014", "#EA0014", "#EA0014", "#EA0014"],
-                borderWidth: 0.5,
-              },
-            ],
-          }}
-          height={height*0.6}
-          options={{
-            maintainAspectRatio: false,
-            // scales: {
-            //   yAxes: [
-            //     {
-            //       ticks: {
-            //         beginAtZero: true,
-            //       },
-            //     },
-            //   ],
-            // },
-            legend: {
-              labels: {
-                fontSize: 15,
-              },
-            },
-          }}
-        />
-      </div>
+      <div style={{ maxWidth: width*0.49 }}>
+      <Card variant="outlined">
+        <CardContent>
+            <h1>Overall Review of Restaurants</h1>
+            <Grid item width={width * 0.49} height={height * 0.7}>
+                <Bar
+                data={{
+                    labels: labels,
+                    datasets: [
+                    {
+                        label: "No.of Restaurants",
+                        data: values,
+                        backgroundColor: ["#EA0014", "#EA0014", "#EA0014", "#EA0014", "#EA0014"],
+                        borderColor: ["#EA0014", "#EA0014", "#EA0014", "#EA0014", "#EA0014"],
+                        borderWidth: 0.5,
+                    },
+                    ],
+                }}
+                height={height*0.7}
+                options={{
+                    maintainAspectRatio: false,
+                    // scales: {
+                    //   yAxes: [
+                    //     {
+                    //       ticks: {
+                    //         beginAtZero: true,
+                    //       },
+                    //     },
+                    //   ],
+                    // },
+                    legend: {
+                    labels: {
+                        fontSize: 15,
+                    },
+                    },
+                }}
+                />
+            </Grid>
+        </CardContent>
+      </Card>
+    </div>
+        
     </div>
   );
 }

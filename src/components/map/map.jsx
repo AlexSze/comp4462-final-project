@@ -30,7 +30,7 @@ export default function Map({ usState, setUsState }) {
         return [statesCenter[usState][0], statesCenter[usState][1]]
     }
 
-    const zoom = (setStateCenter()[0] === 38 && setStateCenter()[1] === -98) ? 4 : 5;
+    const zoom = (setStateCenter()[0] === 38 && setStateCenter()[1] === -98) ? 4 : 7;
 
     function SetView() {
         const minimap = useMap();
@@ -39,68 +39,68 @@ export default function Map({ usState, setUsState }) {
     }
 
     return (
-        
+
         <Card variant="outlined">
             <CardContent>
                 <h2>Map</h2>
-                <div style={{ height: 350 }}>
+                <div style={{ height: height * 0.55 }}>
                     {isloading ?
-                        <Grid item xs={12} align={"center"} width={width * 0.85}>
+                        <Grid item xs={12} align={"center"} width={width * 0.9}>
                             <ReactSpinner />
-                        </Grid> : <Grid item xs={12} align={"center"} width={width * 0.85}>
+                        </Grid> : <Grid item xs={12} align={"center"} width={width * 0.9}>
                             <MapContainer
-                            style={{ height: 350 }}
-                            width={width * 0.85}
-                            center={[38, -98]}
-                            zoom={4}
-                            minZoom={3}
-                            maxZoom={12}
-                        >
-                            <TileLayer
-                                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                            />
-                            <SetView />
-                            {usState === "" && Object.keys(statesCenter).map((item) => {
-                                return (
-                                    <CircleMarker
-                                        key={item}
-                                        center={statesCenter[item]}
-                                        stroke={false}
-                                        fillColor="#EA0014"
-                                        fillOpacity={1}
-                                        radius={10} />
-                                );
-                            })}
-                            {data.map((restuarant) => {
-                                const r_key = restuarant["key"];
-                                const mean_rating = restuarant["mean_rating"];
-                                const coor = JSON.parse(restuarant["coordinates"]);
-                                const r_name = restuarant["name"];
-                                const r_vote_count = restuarant["count"];
-                                return (
-                                    <CircleMarker
-                                        key={r_key}
-                                        center={coor}
-                                        stroke={false}
-                                        fillColor="#EA0014"
-                                        fillOpacity={0.7}
-                                        radius={5}
-                                    >
-                                        <Tooltip>
-                                            <div style={{ margin: "0px" }}>
-                                                <strong style={{ margin: "2px" }}>{r_name}</strong>
-                                                <p style={{ margin: "2px" }}>
-                                                    Rating(mean): {mean_rating}<br />
-                                                    Total vote: {r_vote_count}
-                                                </p>
-                                            </div>
-                                        </Tooltip>
-                                    </CircleMarker>
-                                )
-                            })}
-                        </MapContainer>
-                    </ Grid>}
+                                style={{ height: height * 0.5 }}
+                                width={width * 0.85}
+                                center={[38, -98]}
+                                zoom={4}
+                                minZoom={3}
+                                maxZoom={12}
+                            >
+                                <TileLayer
+                                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                                    attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                                />
+                                <SetView />
+                                {usState === "" && Object.keys(statesCenter).map((item) => {
+                                    return (
+                                        <CircleMarker
+                                            key={item}
+                                            center={statesCenter[item]}
+                                            stroke={false}
+                                            fillColor="#EA0014"
+                                            fillOpacity={1}
+                                            radius={10} />
+                                    );
+                                })}
+                                {data.map((restuarant) => {
+                                    const r_key = restuarant["key"];
+                                    const mean_rating = restuarant["mean_rating"];
+                                    const coor = JSON.parse(restuarant["coordinates"]);
+                                    const r_name = restuarant["name"];
+                                    const r_vote_count = restuarant["count"];
+                                    return (
+                                        <CircleMarker
+                                            key={r_key}
+                                            center={coor}
+                                            stroke={false}
+                                            fillColor="#EA0014"
+                                            fillOpacity={0.7}
+                                            radius={5}
+                                        >
+                                            <Tooltip>
+                                                <div style={{ margin: "0px" }}>
+                                                    <strong style={{ margin: "2px" }}>{r_name}</strong>
+                                                    <p style={{ margin: "2px" }}>
+                                                        Rating(mean): {mean_rating}<br />
+                                                        Total vote: {r_vote_count}
+                                                    </p>
+                                                </div>
+                                            </Tooltip>
+                                        </CircleMarker>
+                                    )
+                                })}
+                            </MapContainer>
+                        </ Grid>}
                 </div>
             </CardContent>
         </Card >

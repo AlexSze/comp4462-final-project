@@ -64,13 +64,13 @@ export default function OurWordCloud({ usState }) {
         <Card variant="outlined">
             <CardContent id="word-cloud">
                 {loading ?
-                    <Grid item align={"center"} width={width * 0.4}>
+                    <Grid item align={"center"} width={width * 0.4} height={height * 0.4}>
                         <ReactSpinner />
                     </Grid> : <Grid container direction="column" width={width * 0.4}>
                         <Grid item align={"left"} >
                             <h2>Food Categories</h2>
                         </ Grid>
-                        <Grid item height={height * 0.3} marginRight={height * 0.009} marginBottom={height * 0.005} >
+                        <Grid item height={height * 0.4} marginRight={height * 0.009} marginBottom={height * 0.005} >
                             {/* Section 1 */}
                             {/* {words.length === 0 ? <div> No Data </div> : <WordCloud
                                 data={words}

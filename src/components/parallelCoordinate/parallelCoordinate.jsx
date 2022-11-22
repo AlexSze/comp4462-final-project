@@ -49,9 +49,9 @@ export default function ParallelCoordinate({ usState }) {
         <h2>Parallel Coordinates</h2>
         <Grid container direction="row" spacing={1}>
           {loading ?
-            <Grid item align={"center"} width={width * 0.4}>
+            <Grid item align={"center"} width={width * 0.4} height={height * 0.6}>
               <ReactSpinner />
-            </Grid> : <Grid item width={width * 0.4} height={height*0.9}>
+            </Grid> : <Grid item width={width * 0.4} height={height * 0.6}>
               <ResponsiveParallelCoordinates
                 data={rawData}
                 variables={[
@@ -110,11 +110,11 @@ export default function ParallelCoordinate({ usState }) {
                   },
                 }}
               />
-              <h4 style={{left:"20px", top: "-30px", position: "relative", transform: [{rotate: "-180deg"}]}}>Categories</h4>
-              <h4 style={{left:"220px", top: "-82px", position: "relative", transform: [{rotate: "-180deg"}]}}>Opening Hours </h4>
-              <h4 style={{left:"250px", top: "-105px", position: "relative", transform: [{rotate: "-180deg"}]}}>(weekly) </h4>
-              <h4 style={{left:"420px", top: "-158px", position: "relative", transform: [{rotate: "-180deg"}]}}>Overall Reviews</h4>
-              <h4 style={{left:"650px", top: "-200px", position: "relative", transform: [{rotate: "-180deg"}]}}>Ambience</h4>
+              <h4 style={{ left: "20px", top: "-30px", position: "relative", transform: [{ rotate: "-180deg" }] }}>Categories</h4>
+              <h4 style={{ left: "220px", top: "-82px", position: "relative", transform: [{ rotate: "-180deg" }] }}>Opening Hours </h4>
+              <h4 style={{ left: "250px", top: "-105px", position: "relative", transform: [{ rotate: "-180deg" }] }}>(weekly) </h4>
+              <h4 style={{ left: "420px", top: "-158px", position: "relative", transform: [{ rotate: "-180deg" }] }}>Overall Reviews</h4>
+              <h4 style={{ left: "650px", top: "-200px", position: "relative", transform: [{ rotate: "-180deg" }] }}>Ambience</h4>
             </Grid>}
           <Grid item></Grid>
         </Grid>

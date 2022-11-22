@@ -79,7 +79,7 @@
     {
         "state": "Pennsylvania",
         "prevalence": "33.3",
-        "resFoodCount": "7163",
+        "resFoodCount": "3163",
         "fastFoodCount": "655",
         "key": "11"
     },
@@ -89,5 +89,121 @@
         "resFoodCount": "2715",
         "fastFoodCount": "555",
         "key": "12"
+    },
+
+
+
+    {
+        "state": "Arizona1",
+        "prevalence": "32.7",
+        "resFoodCount": "2209",
+        "fastFoodCount": "526",
+        "key": "13"
+    },
+    {
+        "state": "California2",
+        "prevalence": "24.6",
+        "resFoodCount": "520",
+        "fastFoodCount": "37",
+        "key": "14"
+    },
+    {
+        "state": "Delaware3",
+        "prevalence": "35.8",
+        "resFoodCount": "3800",
+        "fastFoodCount": "92",
+        "key": "15"
+    },
+    {
+        "state": "Florida4",
+        "prevalence": "23.4",
+        "resFoodCount": "1100",
+        "fastFoodCount": "860",
+        "key": "16"
+    },
+    {
+        "state": "Idaho5",
+        "prevalence": "35.7",
+        "resFoodCount": "3864",
+        "fastFoodCount": "274",
+        "key": "4"
+    },
+    {
+        "state": "Illinois6",
+        "prevalence": "35.2",
+        "resFoodCount": "3632",
+        "fastFoodCount": "198",
+        "key": "17"
+    },
+    {
+        "state": "Indiana7",
+        "prevalence": "39.3",
+        "resFoodCount": "4120",
+        "fastFoodCount": "656",
+        "key": "18"
+    },
+    {
+        "state": "Louisiana8",
+        "prevalence": "34.2",
+        "resFoodCount": "2324",
+        "fastFoodCount": "294",
+        "key": "19"
+    },
+    {
+        "state": "Missouri9",
+        "prevalence": "27.3",
+        "resFoodCount": "1508",
+        "fastFoodCount": "65",
+        "key": "19"
+    },
+    {
+        "state": "Nevada10",
+        "prevalence": "31.3",
+        "resFoodCount": "972",
+        "fastFoodCount": "187",
+        "key": "20"
+    },
+    {
+        "state": "New Jersey11",
+        "prevalence": "24.2",
+        "resFoodCount": "1105",
+        "fastFoodCount": "251",
+        "key": "21"
+    },
+    {
+        "state": "Pennsylvania12",
+        "prevalence": "23.3",
+        "resFoodCount": "1405",
+        "fastFoodCount": "655",
+        "key": "22"
+    },
+    {
+        "state": "Tennessee13",
+        "prevalence": "25.0",
+        "resFoodCount": "1215",
+        "fastFoodCount": "555",
+        "key": "23"
+    }, 
+    {
+        "state": "Arizona14",
+        "prevalence": "21.3",
+        "resFoodCount": "609",
+        "fastFoodCount": "440",
+        "key": "24"
+    },
+    {
+        "state": "California15",
+        "prevalence": "35.6",
+        "resFoodCount": "3830",
+        "fastFoodCount": "57",
+        "key": "25"
+    },
+    {
+        "state": "Delaware16",
+        "prevalence": "30.5",
+        "resFoodCount": "1601",
+        "fastFoodCount": "71",
+        "key": "26"
     }
+    
 ]

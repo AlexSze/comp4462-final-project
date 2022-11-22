@@ -27,7 +27,7 @@ function App() {
       </Grid>
       <Grid item container direction="row" xs={12} >
         <Grid item container direction="column" xs={6} style={{ padding: 6 }}>
-          <Grid item container>
+          <Grid item container style={{ paddingBottom: 2 }}>
             <ParallelCoordinate usState={usState} />
           </Grid>
           <Grid item container>
@@ -36,13 +36,13 @@ function App() {
         </Grid>
 
         <Grid item container direction="column" xs={6} style={{ padding: 6 }}>
-          <Grid item container>
+          <Grid item container style={{ paddingBottom: 2 }}>
             <OurWordCloud usState={usState} />
           </Grid>
-          <Grid item container>
+          <Grid item container style={{ paddingBottom: 2 }}>
             <OurHeatMap usState={usState} />
           </Grid>
-          <Grid item container>
+          <Grid item container >
             <ScatterPlot />
           </Grid>
         </Grid>

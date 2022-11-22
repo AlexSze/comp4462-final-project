@@ -30,7 +30,7 @@ export default function Map({ usState, setUsState }) {
         return [statesCenter[usState][0], statesCenter[usState][1]]
     }
 
-    const zoom = (setStateCenter()[0] === 38 && setStateCenter()[1] === -98) ? 4 : 8;
+    const zoom = (setStateCenter()[0] === 38 && setStateCenter()[1] === -98) ? 4 : 7;
 
     function SetView() {
         const minimap = useMap();

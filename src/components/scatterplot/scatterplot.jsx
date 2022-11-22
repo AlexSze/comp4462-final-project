@@ -120,7 +120,7 @@ export default function ScatterPlot() {
                                         </text>
                                     </g>
                                 </g>
-                                <g transform={`translate(${theWidth / 2 + margin.left},${theHeight + 2 * margin.bottom})`}>
+                                <g transform={`translate(${theWidth / 2 + margin.left},${theHeight + 2 * margin.bottom})`} margin={4}>
                                     <text>
                                         Obesity Prevalence (%)
                                     </text>

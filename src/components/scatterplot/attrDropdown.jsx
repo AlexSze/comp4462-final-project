@@ -16,7 +16,7 @@ export function attrToText(attr) {
 export default function AttrDropdown(props) {
     const attrList = ["fastFoodCount", "resFoodCount"]
     return (
-        <FormControl variant="filled" style={{ backgroundColor: "#738cd6" }}>
+        <FormControl variant="filled" style={{ backgroundColor: "#EA0014" }}>
             <InputLabel style={{ color: "#ffffff" }}>Attributes</InputLabel>
             <Select
                 sx={{

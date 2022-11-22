@@ -78,7 +78,7 @@ export default function ScatterPlot() {
         theHeight = h - margin.top - margin.bottom;
 
     const xScale = scaleLinear()
-        .domain([0, 50]) // input range [min, max]
+        .domain([0, 100]) // input range [min, max]
         .range([0, theWidth]); //output range
 
     const yScale = scaleLinear()
@@ -91,7 +91,7 @@ export default function ScatterPlot() {
             r={5}
             cx={xScale(d["prevalence"])}
             cy={yScale(d[attr])}
-            style={{ fill: "lightblue" }}
+            style={{ fill: "#EA0014" }}
         />
     ));
 
@@ -100,7 +100,7 @@ export default function ScatterPlot() {
             <CardContent >
                 <Grid container spacing={1} direction="column" width={theWidth}>
                     <Grid item align={"left"} >
-                        <h2>{attrToText(attr)} vs BMI</h2>
+                        <h2>{attrToText(attr)} vs Obesity Prevalence</h2>
                     </ Grid>
                     <Grid item align={"right"} marginRight={0.5}>
                         <AttrDropdown attr={attr} setAttrState={setAttrState} />
@@ -122,7 +122,7 @@ export default function ScatterPlot() {
                                 </g>
                                 <g transform={`translate(${theWidth / 2 + margin.left},${theHeight + 2 * margin.bottom})`}>
                                     <text>
-                                        BMI
+                                        Obesity Prevalence (%)
                                     </text>
                                 </g>
                             </svg>

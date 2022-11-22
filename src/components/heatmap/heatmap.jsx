@@ -54,7 +54,7 @@ export default function OurHeatMap({ usState }) {
                         </ Grid>
                         <Grid item height={250} width={width * 0.4}>
                             <div style={{ fontSize: "13px" }}>
-                                <HeatMap xLabels={xLabels} yLabels={yLabels} data={newData} />
+                                <HeatMap xLabels={xLabels} yLabels={yLabels} data={newData} background={"#EA0014"} />
                             </div>
                         </Grid>
                     </Grid>}

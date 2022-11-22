@@ -64,7 +64,7 @@ export default function Map({ usState, setUsState }) {
                                         key={item}
                                         center={statesCenter[item]}
                                         stroke={false}
-                                        fillColor="black"
+                                        fillColor="#EA0014"
                                         fillOpacity={1}
                                         radius={10} />
                                 );
@@ -80,7 +80,7 @@ export default function Map({ usState, setUsState }) {
                                         key={r_key}
                                         center={coor}
                                         stroke={false}
-                                        fillColor="black"
+                                        fillColor="#EA0014"
                                         fillOpacity={0.7}
                                         radius={5}
                                     >

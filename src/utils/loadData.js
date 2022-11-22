@@ -142,17 +142,17 @@ export function loadRankingData(usState) {
     var result = rankingData.filter(res => res["state_Full"] === usState || usState === "" || rankingData.value > 4.0);
     let new_json = [];
     var values = [];
-    const labels = ["=5", "4=<x<5", "3<=x<4", "2<=x<3", "1<=x<2"];
+    const labels = ["4<=x<=5", "3<=x<4", "2<=x<3", "1<=x<2", "0<=x<1"];
     // result = result.sort((a, b) => {
     //     if (a.value > b.value) {
     //         return -1;
     //     }
     // });
-    values.push(result.filter(res=> res["value"] === 5 || res["value"] === 5.0).length);
-    values.push(result.filter(res=> res["value"] < 5 && res["value"] >= 4).length);
+    values.push(result.filter(res=> res["value"] <= 5 && res["value"] >= 4).length);
     values.push(result.filter(res=> res["value"] < 4 && res["value"] >= 3).length);
     values.push(result.filter(res=> res["value"] < 3 && res["value"] >= 2).length);
     values.push(result.filter(res=> res["value"] < 2 && res["value"] >= 1).length);
+    values.push(result.filter(res=> res["value"] < 1 && res["value"] >= 0).length);
     for(let i = 0; i < values.length; i++){
         const text = labels[i];
         const value = values[i];

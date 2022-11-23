@@ -5,7 +5,7 @@ This is the group project of Group 6 in Fall 2022 - COMP4462 Data Visualization.
 
 The dashboard below shows data of restaurants' reviews in the US. Yelp dataset and obesity dataset were used from Kaggle.
 
-Data preprocessing code can be found in the Jupyter notebook in {} directory. The dataset could be unzip and run in the Jupyter notebook.
+Data preprocessing code can be found in the Jupyter notebook in {"/src/backend-jupyter"} directory. The dataset could be unzip and run in the Jupyter notebook.
 
 Contributors:
 + {Alex} Front-end Developer

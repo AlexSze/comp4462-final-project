@@ -33,7 +33,15 @@ Contributors:
   > ( Due to the overwhelming data size, it is possible for our frontend to consume all your computer memory. Please close all browser tab and try again if this problem arise.)
   
 ### How to run Backend 
-  > # 1. 
+```
+  > # 1. download the yelp dataset from https://www.kaggle.com/datasets/yelp-dataset/yelp-dataset (We cannot upload the dataset to our github repo because even after zipping, it is over 4gb)
+  > 
+  > # 2. put the downloaded file to "/src/backend-jupyter" directory
+  > 
+  > # 3. open the "Data_Processing.ipynb" 
+  > 
+  > # 4. press the "Run All" button under the cell column
+  
 
 
 

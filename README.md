@@ -4,16 +4,15 @@
 This is the group project of Group 6 in Fall 2022 - COMP4462 Data Visualization. 
 
 The dashboard below shows data of restaurants' reviews in the US. Yelp dataset and obesity dataset were used from Kaggle.
-![apple](https://user-images.githubusercontent.com/118462821/202849477-04e56227-fa11-42d0-a7a4-8100ea9fa632.jpeg)
 
-Data preprocessing code can be found in the Jupyter notebook in {xx} directory. The dataset could be unzip and run in the Jupyter notebook.
+Data preprocessing code can be found in the Jupyter notebook in {} directory. The dataset could be unzip and run in the Jupyter notebook.
 
 Contributors:
-+ {Alex Sze} Front-end Developer - Map, Word Cloud, Heatmap, Scatter Plot and Foundation
-+ {xx} Front-end dashboard
-+ {xx} Front-end dashboard
-+ {yy} Data preprocessing
-+ {yy} Data preprocessing
++ {Alex} Front-end Developer
++ {Tom} Front-end dashboard
++ {Beatrice} Front-end dashboard
++ {Kitty} Data preprocessing
++ {Janice} Data preprocessing
 
 ### How to run Dashboard 
   > ```
@@ -34,7 +33,6 @@ Contributors:
   > ( Due to the overwhelming data size, it is possible for our frontend to consume all your computer memory. Please close all browser tab and try again if this problem arise.)
   
 ### How to run Backend 
-  > ```
   > # 1. 
 
 

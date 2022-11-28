@@ -143,18 +143,20 @@ export default function Ranking({ usState }) {
       <div style={{ maxWidth: width*0.49 }}>
       <Card variant="outlined">
         <CardContent>
-            <h1>Overall Review of Restaurants (No.of restuarants vs stars)</h1>
+            <h1>Overall Review of Restaurants</h1>
+            <h4 style={{ left: "1%", top: "188%", position: "absolute"}}>No.of restuarants</h4>
+            <h4 style={{ left: "26%", top: "259%", position: "absolute"}}>Stars</h4>
             <Grid item width={width * 0.49} height={height * 0.7}>
                 <Bar
                 data={{
                     labels: labels,
                     datasets: [
                     {
-                        label: "No.of Restaurants",
+                        label: "No.of restaurants in different range of stars",
                         data: values,
                         backgroundColor: ["#EA0014", "#EA0014", "#EA0014", "#EA0014", "#EA0014"],
                         borderColor: ["#EA0014", "#EA0014", "#EA0014", "#EA0014", "#EA0014"],
-                        borderWidth: 0.5,
+                        borderWidth: 0.2,
                     },
                     ],
                 }}

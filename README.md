@@ -4,16 +4,15 @@
 This is the group project of Group 6 in Fall 2022 - COMP4462 Data Visualization. 
 
 The dashboard below shows data of restaurants' reviews in the US. Yelp dataset and obesity dataset were used from Kaggle.
-![apple](https://user-images.githubusercontent.com/118462821/202849477-04e56227-fa11-42d0-a7a4-8100ea9fa632.jpeg)
 
-Data preprocessing code can be found in the Jupyter notebook in {xx} directory. The dataset could be unzip and run in the Jupyter notebook.
+Data preprocessing code can be found in a Jupyter notebook located in {"/src/backend-jupyter"} directory. The datasets need to be unzip and run in the Jupyter notebook.
 
 Contributors:
-+ {Alex Sze} Front-end Developer - Map, Word Cloud, Heatmap, Scatter Plot and Foundation
-+ {xx} Front-end dashboard
-+ {xx} Front-end dashboard
-+ {yy} Data preprocessing
-+ {yy} Data preprocessing
++ {Alex} Front-end Developer
++ {Tom} Front-end dashboard
++ {Beatrice} Front-end dashboard
++ {Kitty} Data preprocessing
++ {Janice} Data preprocessing
 
 ### How to run Dashboard 
   > ```
@@ -35,7 +34,17 @@ Contributors:
   
 ### How to run Backend 
   > ```
-  > # 1. 
+  > # 1. download the yelp dataset from https://www.kaggle.com/datasets/yelp-dataset/yelp-dataset (We cannot upload the dataset to our github repo because even after zipping, it is over 4gb)
+  > 
+  > # 2. put the downloaded file to "/src/backend-jupyter" directory
+  > 
+  > # 3. open the "Data_Processing.ipynb" 
+  > 
+  > # 4. press the "Run All" button under the cell column
+  > ( Due to the overwheling original dataset (6GB), the data preprocessing may takes time when running with Jupyter Notebook)
+  > 
+  > # 5. the output .json & .csv file will be export to the same directory.
+  
 
 
 

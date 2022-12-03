@@ -95,9 +95,6 @@ export default function ParallelCoordinate({ usState }) {
                 ]}
                 layout={"horizontal"}
                 margin={{ top: 20, right: 60, bottom: 60, left: 60 }}
-                // colors={(item) => {
-                //   return getStanceColor(getPoliticalStance(item["S#"]));
-                // }}
                 lineOpacity={40 / rawData.length}
                 theme={{
                   axis: {

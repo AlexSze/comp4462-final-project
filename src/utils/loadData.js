@@ -70,33 +70,12 @@ export function loadParallelCoordinateData(include = true, usState, ...attribute
     else if(usState === "Tennessee")
         food_categories = ["Pizza", "Bakeries", "Mexican", "Burgers", "Bars", "Beer", "Irish", "Thai", "Beer", "Salad"];
     var result = parallelCoordinateData.filter(res => res["state_Full"] === usState || usState === "");
-    // console.log(food_categories);
-    // console.log(result.slice(0, 10));
-    // console.log(usState);
-    // console.log(result);
-
-    for (let i = 0; i < attributes.length; ++i) {
-        if (!attributes.includes(attributes[i])) {
-            attributes.splice(i, 1);
-            --i;
-        }
-    }
-
-    if (attributes.length === 0) return result;
-    result = result.map((restaurant) =>
-        Object.fromEntries(
-            Object.entries(restaurant).filter(([key, value]) =>
-                include ? attributes.includes(key) : !attributes.includes(key)
-            )
-        )
-    );
 
     let new_json = [];
     for (let i = 0; i < result.length; i++) {
         const dummy_Ambience = result[i]["Ambience"];
         var Ambiences = [];
-        // if(result[i]["Ambience"] === "None")
-        //     break;
+
         for (let a = 0; a < dummy_Ambience.length; a++) {
             if (dummy_Ambience[a].includes("divey"))
                 Ambiences.push("divey");
@@ -143,11 +122,7 @@ export function loadRankingData(usState) {
     let new_json = [];
     var values = [];
     const labels = ["4<=x<=5", "3<=x<4", "2<=x<3", "1<=x<2", "0<=x<1"];
-    // result = result.sort((a, b) => {
-    //     if (a.value > b.value) {
-    //         return -1;
-    //     }
-    // });
+
     values.push(result.filter(res=> res["value"] <= 5 && res["value"] >= 4).length);
     values.push(result.filter(res=> res["value"] < 4 && res["value"] >= 3).length);
     values.push(result.filter(res=> res["value"] < 3 && res["value"] >= 2).length);

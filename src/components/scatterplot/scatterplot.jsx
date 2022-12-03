@@ -91,7 +91,7 @@ export default function ScatterPlot() {
             r={5}
             cx={xScale(d["prevalence"])}
             cy={yScale(d[attr])}
-            style={{ fill: "#EA0014" }}
+            style={{ fill: "#E84444" }}
         />
     ));
 

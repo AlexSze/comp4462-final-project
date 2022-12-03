@@ -16,14 +16,15 @@ export function attrToText(attr) {
 export default function AttrDropdown(props) {
     const attrList = ["fastFoodCount", "resFoodCount"]
     return (
-        <FormControl variant="filled" style={{ backgroundColor: "#EA0014" }}>
-            <InputLabel style={{ color: "#ffffff" }}>Attributes</InputLabel>
+        <FormControl variant="filled" style={{ backgroundColor: "#E84444"}}>
+            <InputLabel style={{ color: "#ffffff"}}>Attributes</InputLabel>
             <Select
                 sx={{
                     width: 230,
                     color: "#ffffff",
                     border: "3px solid #ffffff",
                     textAlign: "left",
+                    // opacity: 1,
                 }}
                 value={props.attr}
                 onChange={(e) => {
